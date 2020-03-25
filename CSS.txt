@@ -1,0 +1,212 @@
+
+ID selector --can only use one time in one page
+
+class selector--->can only use multiple times in one page
+
+border--->top,bottom,left,right
+
+outline--->border over outline
+
+padding-->10px 20px-->(top,bottom-10px),(left,right-20px)
+
+width-->100%--fully responsive
+
+width-->100px--fixed
+
+overflow---->hidden,scroll,auto
+
+types of overflow--->overflow,overflow-x,overflow-y
+
+shadow-->-moz-box-shadow:10px,10px,10px red(moz-->mozila browser)
+
+shadow-->-webkit-box-shadow:10px,10px,10px red(webkit-->google chrome,safari)
+
+moz,webkit--->using becaause if old browser browse the website then shadow does not accept shadow effect so moz,webkit old browse perfectly 
+
+text-transform:uppercase;
+
+text-indent:50px;---->first line take some space in those paragraph
+
+text-decoration-line:underline;
+
+text-decoration-line:overline;--->line over the line
+
+text-decoration-line:line-through;---->like as del property
+
+text-decoration-color:green--->underline color change 
+
+text-decoration-style:dashed;
+
+text-decoration-style:wavy
+
+word-wrap:break-word----->long word break in the div otherwise overflow the long word in the div
+
+word-wrap:break-all--->all  word break in the div
+
+white-space:pre---->I write in the html tag same as print in the browser for pre tag .HTML can not count the extra white space.If i need extra white space then using pre tag
+
+white-space:pre-line--->same as html page and browser
+
+text-overflow:ellipsis--->understand more line in those paragraph which is not visible
+
+writing-mode:vertical-rl--->full div rotate like as landscape
+
+column-count:3----->one div where 3 column are contain
+
+column-gap:10px---->gap between two column which is 10 px
+
+website--->IconFinder
+
+background-size:cover;---->full image take within the div 
+
+background-size:contain;--->tri the full image within the div
+
+background:linear-gradient(-45deg,red,yellow,green,blue)--->one div contain 4 color at the same time
+
+background:rgba(180,0,0,0.5);---->only div opacity lower but those div's other element are not lower sharpness
+
+visibility:hidden---->like ul has some thing and paragraph has some thing now I hidden ul then ul tag contain elements hidden but this tag keep those place
+
+display:none--->like ul has some thing and paragraph has some thing now I hidden ul then ul tag contain elements hidden but this tag can not keep those place
+
+tr:nth-child(even){background:red}---->even child's color change
+
+resize:both;------>user can increase the size of div by horizontal and vertical
+
+cursor:pointer;----->change the cursor when we mouse go through the exact div
+
+img{clip-path:circle/ellipse/polygon/inset(60% at 0% 0%)----->take half or full or quater image or piramid or egg shape or dimond shap etc
+
+shape website-->bennettfeely.com
+
+clip-path:circle(30% at 30% 50%)
+
+shape-outside:circle(30% at 30% 50%)----->image is circle and paragraph will using float and paragraph will outside the circle of right side
+ 
+img{filter:blur/brightness/contrast/drop-shadow/grayscale/invert/opacity/saturate/sepia/(30%);img blur/brightness
+
+transition-->mouse effect when we put the mouse on the certain div
+
+website--transition-----cubic-bezier
+
+object-fit:fill----->responsive image
+ 
+website--border image generator---->we will put border on image  surrounded by the div
+
+ul>li{color:red}----->direct child selector----->first child will be red color
+
+div+p{color:red}----->adjacent sibling selector----->first child will be red color  
+
+general sibling selector--->div ~ p{color:red}----->div after then next child select and change the color
+
+CSS attributes selector---->img[alt]{border:3px solid blue;}--->when we use alt in image then select those image
+
+input[type]{border:3px solid blue;}----->all input type select and border color will be blue
+
+a[target]{color:red}---->target the ancor tag and change the color
+
+input[type='text']{border:3px solid blue;}--->only text input select and change the color
+
+img[alt^='Image']{border:3px solid blue;}--->If the image starting image in alter tag then select those image
+
+img[alt|='Image']{border:3px solid blue;}--->First check starting image then check hyphen(-) if two condition true then result will be true.
+
+img[alt$='Image']{border:3px solid blue;}--->If the image ending image in alter tag then select those image
+
+img[alt*='of']{border:3px solid blue;}--->check  'of' the alter part in image then select those image
+
+
+
+
+
+
+
+p/li::first-letter/line{
+color:red;
+font-size:30px;}----->In the single  page where starting paragraph tag then change all the starting paragraph tag
+
+::selection{background:red;}------>when user select some paragraph or content in the browser then selected content color will be red
+
+::placeholder{color:red;}------>styling the placeholder when we write something then automatically hidden placeholder
+ 
+p::before{
+content:"hello";
+background:red;}---->In paragraph tag contain where first child is before tag
+
+p::after{
+content:"hello";
+background:green;}---->In paragraph tag contain where last child is after tag
+besides we can use hover when we put the cursor in the paragraph tag then showing the last child 
+
+p::after{
+content:att(class);
+color:red}------>one word but first part color normal and last part color will be red
+
+input,textarea{
+font-size:20px;
+caret-color:blue;}----->when we write the input feild then change the border color will be blue;
+
+li:first-child{color:red;}----->list first child text will be red color
+  
+p:last-child{color:red;}----->list last child text will be red color
+ 
+li:nth-child(3){color:red;}----->Third child selected and text will be red color
+
+li:nth-child(2n){color:red;}----->even child selected and text will be red color
+
+li:nth-child(2n+1){color:red;}----->odd child selected and text will be red color
+
+p:target{background:gold;}------>when user put the cursor in the paragraph tag then this paragraph text/background color will be changed.when move/take away  the cursor then get back previous color
+
+input:focus{border:3px solid red;}---->when we click the input feild then border color will be solid which is red
+ 
+input[type='checkbox']:checked{box-shadow:0 0 0 3px red;}---->when we click the checkbox feild then border color will be solid which is red
+ 
+readonly----->only readable ,we can not write in this field only read
+
+input[type='email']:invalid{
+border:1px solid red;
+background: pink;}--------->like we input email field  but this is not correct so this field color are not changed but when write right email then back to the other color
+ 
+
+
+
+
+
+
+
+text-decoration-line:underline;
+
+text-decoration-color:red;----->change the color
+
+text-decoration-thickness:10px;--->change the underline thikness
+
+text-decoration-style:solid;--->underline will be solid
+
+text-decoration-line:overline;--->line will be over
+
+text-underline-offset:10px----->text and underline take 10px space
+
+CurrentColor---->if we change the parent color then automatically change the child like as border, child,image etc.
+
+::marker{color:red;}---->all li tag color will be red
+
+ul li: marker{color:red}--->unordered list where li tag color will be red
+
+priority level---->1.inline CSS 2.Id name 3.class name 4.tag name
+
+.first{color:green !important}---->like this section id is more powerful but we use important in class name we browser print the class tag because using (important )
+
+@support--->conditional css
+
+website -can i use---->which browser support the tag and which browser are support and which browser are not support 
+ 
+input:placeholder-shown{border:3px solid red;}---->at first all input border will be red color then when we write something this input field then change the border color
+
+input[type="text"]:placeholder-shown{border:3px solid red;}---->only text input type field selected
+
+ul{list-style-type:'test -/many symbol';
+list-style-position:inside;}------->styling list type value where atfirst input 'Test-' then input inside the llist type value
+website---list-style-type----->toptal.com
+
+html{scroll-behavior:smooth;}------>smoothly scroll working

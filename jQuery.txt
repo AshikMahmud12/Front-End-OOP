@@ -1,0 +1,353 @@
+$(document).ready(function)(){
+var a= $('#test1').html();
+console.log(a);
+}
+
+Selector
+$("#idName")----->id selector
+$(".className")----->class selector
+$("tagName")------>$("p")
+
+Advance selector
+$("*")
+$("ul li")
+$(".abc, .xyz")
+$("h1,div,p")
+$("p:first")
+$("p:last")
+$("li:even")
+$("li:odd")
+
+Id selector
+$(document).ready(function)(){
+$("#list/li:first-child/li:last").css("color","red");
+});
+$("ul li:lt(3)").css("color","red");----->selected 1 to 3 index
+
+Mouse Event
+click()
+dblclick()
+contextmenu()
+mouseenter()
+mouseleave()
+
+click()
+background color change
+$(document).ready(function)(){
+$(#box).click(function)(){
+$('#box').css('background-color','green');
+});
+});
+
+background color change when we click double in the certain div element
+$(document).ready(function)(){
+$(#box).dblclick(function)(){
+$('#box').css('background-color','green');
+});
+});
+
+background color change when we right button on mouse click  in the certain div element
+$(document).ready(function)(){
+$(#box).dblclick(function)(){
+$('#box').css('background-color','green');
+});
+});
+
+background color change when we put in the certain div element
+$(document).ready(function)(){
+$(#box).mouseenter(function)(){
+$('#box').css('background-color','green');
+});
+});
+
+background color change when we take away in the certain div element
+$(document).ready(function)(){
+$(#box).mouseenter(function)(){
+$('#box').css('background-color','green');
+});
+});
+
+keyboard Event
+keypress()
+keydown()
+keyup()
+
+full body background color change when we press any key in the keyboard
+$(document).ready(function)(){
+$('body').keypress(function)(){
+$('this').css('background-color','green');
+});
+
+//full body background color change when we take away any key in the keyboard
+$('body').keypress(function)(){
+$('this').css('background-color','green');
+});
+
+$('body').keydown(function)(){
+$('this').css('background-color','green');
+});
+});
+
+From Event
+focus()
+blur()
+change()
+select()
+submit()
+
+input box background  color will be change when we click the input box 
+$(document).ready(function)(){
+$('#sname,#sclass,#scountry').focus(function)(){
+$('this').css('background-color','green');
+});
+
+input box background  color will be change back to the previous color when we click  the other  input box 
+$('#sname,#sclass,#scountry').blur(function)(){
+$('this').css('background-color','green');
+});
+
+input box background  color will be change  when we click  the other  input box or other 
+$('#sname,#sclass,#scountry').change(function)(){
+$('this').css('background-color','green');
+});
+
+mainly (change)keyward will goes throw the option value
+
+input box background  color will be change when we click the other input box and again click the previous input box 
+$(document).ready(function)(){
+$('#sname,#sclass,#scountry').select(function)(){
+$('this').css('background-color','green');
+}); 
+
+when we click submit button then showing the message form submitted
+$(document).ready(function)(){
+$('#sform').select(function)(){
+alert("Form Submitted");
+}); 
+
+Window Events
+load()
+unload()
+resize()
+scroll()
+
+showing the scroll increment in the console 
+$(document).ready(function)(){
+$('#box').scroll(function)(){
+console.log("you are scrolling")
+}); 
+
+Get Methods
+text()--->showing element inside the tag 
+html()
+attr()--->showing the class element value
+val()
+
+showing the full div where id is box  in the console 
+$(document).ready(function)(){
+var a=$('#box').html();
+console.log("a")
+}); 
+
+
+when we submitted form then name, class,country value  showing the alert option
+$(document).ready(function)(){
+$('#sform').submit(function)(){
+var name=$('#name').val();
+var classname=$('#sclass').val()
+var country=$('#scountry').val();
+alert("hello " + name + "class": "classname+ "country: "+country);
+}); 
+
+Set Methods
+text()
+html()
+attr()
+val()
+
+when we click the button then change the heading tag and hello will put this heading tag
+$(document).ready(function)(){
+$('#clickButton').click(function(){
+$('#box h2').text("hello ");
+});
+});
+ 
+when we click the button then change the heading tag and paragraph tag hello will put this heading tag this is new text put the paragraph tag
+$(document).ready(function)(){
+$('#clickButton').click(function(){
+$('#box h2').text("hello ");
+$('#box p').html("this is new text");
+});
+});
+
+when we click the button then change the heading tag and paragraph tag  and heading attribute color will be changed which will be red color ,hello will put this heading tag ,this is new text put the paragraph tag
+$(document).ready(function)(){
+$('#clickButton').click(function(){
+$('#box h2').text("hello ");
+$('#box p').html("this is new text");
+$('#box h2').attr("class","red");
+});
+});
+
+CSS Class Methods
+addClass()
+removeClass()
+toggleClass()
+
+when we click the addbutton then change the certain full div color
+$('#addButton').click(function(){
+$('#box').addclass("second");
+
+when we click the removebutton then back to the previous the certain full div color
+$('#removeButton').click(function(){
+$('#box').removeclass("second");
+
+one button click change theif we click again then color will be the previous color
+$('#toggleButton').click(function(){
+$('#box').toggleclass("second");
+
+CSS Method
+when we click the style button then change the certain div which is using inline css 
+$(document).ready(function)(){
+$('#styleButton').click(function(){
+$('#box').css({"background":"pink","color":"red");
+
+Previous Event Implementation way
+when we put on the mouse in the certain div then change the color and if we tak away on the same div then this div get back the previous div 
+$(document).ready(function)(){
+$("#box").on("mouseover mouseout",function(){
+$(this).toggleClass("boxbg);
+});
+});
+
+
+when we click the certain div then div color will be orange and when we put on the mouse on the certain div then color will be pink besides when we take away on the certain div then color will be green
+$(document).ready(function)(){
+$("#box").on({
+"click" :function(){
+$(this).css("background","orange");
+},
+
+"mouseover" :function(){
+$(this).css("background","pink");
+},
+
+"mouseout" :function(){
+$(this).css("background","green");
+}
+});
+});
+
+jquery prepend() and Append()
+when we click the prepend button then some thing write on the certain div and again if we click the append button then write something down the div 
+
+After() & Before()
+when we click the prepend button then some thing write on the certain div and again if we click the append button then write something down the div 
+$(document).ready(function)(){
+$(#afterBtn).click(function)(){
+$('#box').after("after:Mahmud")
+});
+$(#beforeBtn).click(function)(){
+$('#box').after("Before:Ashik")
+});
+});
+
+Remove() & Empty()
+When we click the remove button then certain div will be remove the page and when we the click the empty button then the certain div will be empty but contain this div
+
+AppendTo() & PrependTo()
+same as  the prepend() method and append() method
+
+clone() method
+when we click the clone button then we can use prependTo() method and appendTo() method which function work on copy the other div and put the certain div3
+
+ReplaceWith() & replaceAll()
+when we click the replaceWith button then change the those certain heading or paragraph tag. When we click the replaceAll then change element which is only heading or span tag so we using replaceWith method 
+
+Wrap() & Unwrap() method
+like we click the wrap() function then one div contain which background color staying green color then clicking the wrap function those div contain another div change the background color which will be red. on the othehand if we click unWrap() button then remove all the color 
+
+wrapAll() & wraplnner()
+when we click wrapAll() button then change the all div color if we call the wrap inside the function like which is child function when we click the wrapInner button then change the only this certain div like its working with parent class
+  
+position() & offset()
+position-->relative to its parent element
+offset()-->relative to the document
+If we need how many take margin and padding in px in the heading or paragraph tag from the starting div
+
+scrollTop() & scrollLeft()
+hasClass()---->class has contain  the div or not just check true or false 
+
+Effect Hide() and show()
+Hide()--->when we click the hide button then hide the certain div 
+show()---->when we click the show button then showing the full div which was hidden button
+$(document).ready(function)(){
+$('hideBtn').click(function(){
+$('#box').show("slow/first/1000")---->hide slow or fast or set timing 
+toggle()---->working with same as hide() and show() function but toggle button which  working  two buttons work whose are hide and show
+
+Effect:Fade Method
+fadeIn()---->same as show() function
+fadeOut()---->same as hide() function
+fadeToggle()--->same as toggle() function---->one function which work at a time by which are fadeIn() and fadeOut() working   
+fadeTo()--->same as transparent working like as when we click the fadeTo buttton then those div decreasing the opacity 
+
+Slide Methods()
+slideDown()--->same as hide() function extra feature is which is annimated 
+slideUp()----->same as show() function extra feature is which is annimated 
+slideToggle()--->same as toggle() function extra feature is which is annimated 
+
+animated()---->certain div animated and goes through one place to another place
+stop()---->when we click animated then animated but I want to stop the animated when the animated goes through in this time we use stop button
+
+Method chaining
+when we click animated function then amimated the certain div at a time change the background color and using slideup() and slidedown() function so at a time we work many work by using chaining method
+
+DOM traversing Method()
+Ancestor Traversing method--->child->parent->grandParent->greatGrandParent
+parent()
+parents()
+parentsUntil()
+closeset()
+offsetParent()
+
+parent()--->like->mainOuter->Outer->Inner->A,B,C,D(child)
+Now I take child id and then we change the immediate parent background color by using parent() function
+parents()--->Now I take child id and then  change the upper all  parent background color by using parents() function besides like I take child but now I change the greatGrandParent color which is possible by using the parents() function
+parentsUntil()--->Now I take child id but we change parent 2 to parent 5 will be change the background color but upper parents bg color are not change so we can set a range by using parentsUntil() method
+offsetParent()--->Now I take child id then change the single page body color but if we use parent class position:relative then those div change the color
+closeset()---->Now I take child individual id then we take individual id select by closest id then certain div will be changed
+
+Descendants Methods--->child->grandChild->greatGrandChild
+children()--->like we target parent class then change the background in immediate children() function besides we change the background by using specific child targetting
+find()--->we can target any child which are contain in the grandParent and change the color
+
+Sibling Methods()
+siblings()--->like we take one child then using sibling() function then change the all sibling color besides we change the specific child bg color by using the siblings() function
+next()-->change the next child background color
+prev()-->change the prev child backgrund color
+nextAll()-->change the next all child background color
+
+
+Filtering Methods
+first()--->working same as targeting in css in this function we can change the color  <p>, <h1> any tag value 
+last()-->targeting the last child and change the color
+eq(2)--->targeting the specific id,class,li value and change the color
+not()--->except this classs and target all classes and change the color
+slice()--->like sibling 5 but we use slice(2) then target 2,3,4,5 and change the color besides we can use parameter slice(3,4) targetting 2,3 and change the color
+
+
+has() and is() Method
+has()---->has(b,span)---->target which paragraph tag where using span and bold tag
+is()---->using only contain if(is()) condition  if the condition true then change the color and if result is false then background color will not changed
+
+each()----->give all circle/squre in the paragraph/heading/li etc 
+
+mousemove(), pageX,pageY--->If we move mouse then calculate left right px in the div
+
+event.type---->get the event and told them which method used when we put the mouse on the certai div or click in this div
+keydown()--->event.type---->this type keyword told them which keyword we input this keyword must be asc11  value print
+
+event.target
+
+

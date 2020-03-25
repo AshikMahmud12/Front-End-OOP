@@ -1,0 +1,1441 @@
+01309141983   
+
+1. <script>
+            var a = prompt("Enter First Number");
+            var b = prompt("Enter Second Number");
+            var c = a + b;
+            document.write(c);
+        </script>
+ 
+
+ 2. <script>
+            function sum(a, b) {
+                document.write(a + b);
+            }
+            sum(10, 10);
+        </script>
+
+
+
+   3. <script>
+            function sum(math, eng, science) {
+                var s = math + eng + science;
+                return s;
+            }
+            var total=sum(50,50,50);
+            document.write(total);
+        </script>
+
+
+
+ 4. <script>
+  
+            function sum(math, eng, science) {
+                var s = math + eng + science;
+                return s;
+            }
+            function percentage(t) {
+                var per = (t / 300) * 100;
+                document.write(per);
+            }
+            var total = sum(50, 50, 50);
+            percentage(total);
+        </script>
+
+var a=10---->outside function---global variable
+var a=10----> Inside function---local variable
+
+
+5. onClick Attribute
+
+function hello(){
+    document.write("hello everyone ");
+}
+
+ <body>
+        <button onclick="hello()">Click Me</button>
+ <p onmouseenter="hello()">Click on Me</p>
+    </body>
+
+
+
+6. While
+var a = 1;
+while (a <= 10) {
+    document.write(a + " Ashik<br>");
+    a = a + 1;
+}
+
+7. do while 
+var a = 1;
+do {
+    document.write(a + " Ashik<br>");
+    a = a + 1;
+} while (a <= 5);
+
+
+8. for loop
+for (a = 1; a <= 10; a++) 
+document.write(a + " Ashik<br>");
+
+9. cont‌inue  
+for (a = 1; a <= 10; a++) {
+    if (a == 3) {
+        document.write("Hey : " + a + "<br>");
+        continue;
+    }
+
+    document.write("Number : " + a + "<br>");
+}
+ output
+Number : 1
+Number : 2
+Hey : 3
+Number : 4
+Number : 5
+Number : 6
+Number : 7
+Number : 8
+Number : 9
+Number : 10
+
+10. break
+for (a = 1; a <= 10; a++) {
+    if (a == 3) {
+        document.write("Hey : " + a + "<br>");
+        break;
+    }
+
+    document.write("Number : " + a + "<br>");
+}
+output:
+Number : 1
+Number : 2
+Hey : 3
+
+
+
+11. array
+var a=10, 10, 10;----error
+var a="10, 10, 10";----string
+var a=[10, 10, 10];----array
+
+
+var arr = [10, 10, 10];
+document.write(arr);
+output:10,10,10
+
+var arr = [10, 20, 30];
+document.write(arr[2]);
+output:30
+
+
+var arr = [10, 20, 30, "ashik", true, null];
+document.write("<ul>");
+for (a = 0; a < 6; a++) {
+    document.write("<li>" + arr[a] + "</li>");
+}
+document.write("<ul>");
+output:10
+20
+30
+ashik
+true
+null
+
+
+
+var arr = new Array();
+arr[0] = 10;
+arr[2] = "harry";
+arr[4] = true;
+document.write("<ul>");
+for (a = 0; a < 6; a++) {
+    document.write("<li>" + arr[a] + "</li>");
+}
+document.write("<ul>");
+output:
+10
+undefined
+harry
+undefined
+true
+undefined
+
+
+var arr = new Array();
+for (i = 0; i < 3; i++) {
+    arr[i] = prompt("Enter the value:");
+}
+document.write("<ul>");
+for (a = 0; a < 6; a++) {
+    document.write("<li>" + arr[a] + "</li>");
+}
+document.write("<ul>");
+output:
+10
+ashik
+true
+undefined
+undefined
+undefined
+
+12.Multididimentional array
+var arr = [
+    ["ashik", 18, "male", "CSE"],
+    ["tanzil", 19, "male", "CSE"],
+    ["arif", 20, "male", "CSE"],
+    ["sayket", 14, "male", "CSE"]
+];
+for (var a = 0; a < 4; a++) {
+    for (var b = 0; b < 4; b++) {
+        document.write(arr[a][b] + " ");
+    }
+    document.write("<br>");
+}
+output:
+ashik 18 male CSE
+tanzil 19 male CSE
+arif 20 male CSE
+sayket 14 male CSE
+
+var arr = [
+    ["ashik", 18, "male", "CSE"],
+    ["tanzil", 19, "male", "CSE"],
+    ["arif", 20, "male", "CSE"],
+    ["sayket", 14, "male", "CSE"]
+];
+
+document.write(arr[0][3]);
+output:CSE
+
+
+var arr = [
+    ["ashik", 18, "male", "CSE"],
+    ["tanzil", 19, "male", "CSE"],
+    ["arif", 20, "male", "CSE"],
+    ["sayket", 14, "male", "CSE"]
+];
+
+document.write(arr.length);
+document.write("<table border='1px' cellspacing>");
+for (var a = 0; a < arr.length; a++) {
+    document.write("<tr>");
+    for (var b = 0; b < arr[a].length; b++) {
+        document.write("<td>" + arr[a][b] + "</td>");
+    }
+    document.write("</tr>");
+}
+document.write("</table>");
+
+output:
+4
+ashik	18	male	CSE
+tanzil	19	male	CSE
+arif	20	male	CSE
+sayket	14	male	CSE
+
+
+13. Modify Array Element
+var arr = ["ashik", 18, "male", "CSE"];
+document.write(arr + "<br>");
+arr[0] = "sayket";
+document.write(arr);
+output:
+ashik,18,male,CSE
+sayket,18,male,CSE
+
+
+
+var arr = ["ashik", 18, "male", "CSE"];
+document.write(arr + "<br>");
+arr[0] = "sayket";
+document.write(arr + "<br>");
+delete arr[1];
+document.write(arr + "<br>");
+output:
+ashik,18,male,CSE
+sayket,18,male,CSE
+sayket,,male,CSE
+
+
+array sort/reverse
+var arr = ["Tanzil", "Ashik", "male", "CSE"];
+document.write(arr + "<br>");
+arr.sort();
+document.write(arr + "<br>");
+arr.reverse();
+document.write(arr + "<br>");
+
+output:
+Tanzil,Ashik,male,CSE
+Ashik,CSE,Tanzil,male
+male,Tanzil,CSE,Ashik
+
+array pop/push----Stack
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket"];
+document.write(arr + "<br>");
+arr.pop();
+document.write(arr + "<br>");
+arr.push("Hasan");
+document.write(arr + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket
+Tanzil,Ashik,Zahid
+Tanzil,Ashik,Zahid,Hasan
+
+array shift/unshift
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket"];
+document.write(arr + "<br>");
+arr.shift();
+document.write(arr + "<br>");
+arr.unshift("Hasan");
+document.write(arr + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket
+Ashik,Zahid,Sayket
+Hasan,Ashik,Zahid,Sayket
+
+array concat/join
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket"];
+document.write(arr + "<br>");
+var arr1 = arr.concat("Rahul", "Rahman");
+document.write(arr1 + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket"];
+document.write(arr + "<br>");
+var arr1 = ["Rahul", "Rahman"];
+var arr2 = ["Jannat", "Rupa"];
+var arr3 = arr.concat(arr1, arr2);
+document.write(arr3 + "<br>");
+
+output: 
+Tanzil,Ashik,Zahid,Sayket
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman,Jannat,Rupa
+
+join
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket"];
+document.write(arr + "<br>");
+var arr1 = ["Rahul", "Rahman"];
+var arr2 = arr.concat(arr1);
+document.write(arr2 + "<br>");
+var arr3 = arr2.join(" ");
+document.write(arr3);
+
+output:
+Tanzil,Ashik,Zahid,Sayket
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Tanzil Ashik Zahid Sayket Rahul Rahman
+
+
+array slice
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+var arr2 = arr.slice(1, 4);
+document.write(arr2 + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Ashik,Zahid,Sayket
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+var arr2 = arr.slice(1);  --->index 1 to all value print
+document.write(arr2 + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Ashik,Zahid,Sayket,Rahul,Rahman
+
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+var arr2 = arr.slice(-3); //reversely print
+document.write(arr2 + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Sayket,Rahul,Rahman
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+var arr2 = arr.slice(-3, -1); //print -3 index and -1 index
+document.write(arr2 + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Sayket,Rahul
+
+
+array splice(change existing array)
+splice(index,howmany,newvalue,delete)
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+arr.splice(2, 0, "Mitu", "Nitu");//o-means no delete, 2-means add new value before 2 index
+document.write(arr + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Tanzil,Ashik,Mitu,Nitu,Zahid,Sayket,Rahul,Rahman
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+arr.splice(2, 2, "Mitu", "Nitu"); //2-means index and 2 means index 2 to 2 value  delete  then print
+document.write(arr + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Tanzil,Ashik,Mitu,Nitu,Rahul,Rahman
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+arr.splice(2, 2);
+document.write(arr + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+Tanzil,Ashik,Rahul,Rahman
+
+array isArray()---array or not
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+var arr2 = Array.isArray(arr);
+document.write(arr2 + "<br>");
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Rahman
+true
+
+var arr = "Tanzil";//string not array
+document.write(arr + "<br>");
+var arr2 = Array.isArray(arr);
+document.write(arr2 + "<br>");
+
+output:
+Tanzil 
+false
+
+array indexOf() & lastIndexOf()
+indexOf(search item, Start)
+
+indexOf()-----searching start first
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Rahman"];
+document.write(arr + "<br>");
+var arr2 = arr.indexOf("Ashik");
+document.write(arr2);
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Ashik
+1
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Ashik"];
+document.write(arr + "<br>");
+var arr2 = arr.indexOf("Ashik", 2);// 2 means searching start index 2 to last then print 
+document.write(arr2);
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Ashik
+5
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Ashik"];
+document.write(arr + "<br>");
+var arr2 = arr.indexOf("sakil", 2);// if the value are not found then print -1
+document.write(arr2);
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Ashik
+-1
+
+lastIndexOf()----- searching start last
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Ashik"];
+document.write(arr + "<br>");
+var arr2 = arr.lastIndexOf("Ashik");// searching start last index
+document.write(arr2);
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Ashik
+5
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Ashik"];
+document.write(arr + "<br>");
+var arr2 = arr.lastIndexOf("Ashik", 2);//searching start last 2 number index
+document.write(arr2);
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Ashik
+1
+
+
+array method include()----value include or not
+
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Tomalica"];
+document.write(arr + "<br>");
+var arr2 = arr.includes("Ashik");
+document.write(arr2);
+
+output:
+Tanzil,Ashik,Zahid,Sayket,Rahul,Tomalica
+true
+
+
+
+Array methods some()
+If only one true element  contain then true or false
+var age = [10, 13, 15, 20];
+document.write(age + "<br>");
+
+var b = age.some(checkAdult);
+document.write(b + "<br>");
+function checkAdult(age) {
+    return age >= 18;
+}
+
+output:
+10,13,15,20
+true
+
+Array methods every()
+All element contain true then true or false
+var age = [10, 13, 15, 20];
+document.write(age + "<br>");
+
+var b = age.every(checkAdult);
+document.write(b + "<br>");
+function checkAdult(age) {
+    return age >= 18;
+}
+
+output:
+10,13,15,20 //one element true but other element false for condition then return false
+false
+
+
+Array methods find()
+var ages = [10, 23, 15, 20];
+document.write(ages + "<br>");
+
+var b = ages.find(checkAdult);
+document.write(b + "<br>");
+function checkAdult(ages) {
+    return ages >= 18;
+}
+output:
+10,23,15,20
+23//if one value which is greater than condition then print it and other element can not check just print first true element
+
+
+Array methods findIndex()
+var ages = [10, 23, 15, 20];
+document.write(ages + "<br>");
+
+var b = ages.findIndex(checkAdult);
+document.write(b + "<br>");
+function checkAdult(ages) {
+    return ages >= 18;
+}
+output:
+10,23,15,20
+1 //print only index and other is same find method
+
+
+
+
+Array methods filter()
+var ages = [10, 23, 15, 20];
+document.write(ages + "<br>");
+
+var b = ages.filter(checkAdult);
+document.write(b + "<br>");
+function checkAdult(ages) {
+    return ages >= 18;
+}
+
+output:
+10,23,15,20
+23,20//print all value which is greater than the condition
+
+
+
+forEach method
+var arr = ["Tanzil", "Ashik", "Zahid", "Sayket", "Rahul", "Tomalica"];
+
+arr.forEach(function(value) {
+    document.write(value + "<br>");
+});
+
+output:
+Tanzil
+Ashik
+Zahid
+Sayket
+Rahul
+Tomalica
+
+
+Creating Object:Method 1
+var a = {
+    fname: "Ashik",
+    lname: "Mahmud",
+    age: 24,
+    email: "ashikmahmud12345@gmail.com",
+    favmovies: ["Dhoom", "Shahoo", "pk"],
+    living: {
+        city: "Dhaka",
+        country: "Bangladesh"
+    },
+
+    salary: function() {
+        return 2500;
+    },
+    fullname: function() {
+        return this.fname + " " + this.lname;
+    }
+};
+
+console.log(a);
+document.write(a.fname);
+document.write(a.favmovies[1]);
+document.write(a.living.city);
+document.write(a.salary());
+document.write(a.fullname()); // this means a.then next part
+
+output: AshikShahooDhaka2500Ashik Mahmud 
+
+Creating Object:Method 2 
+
+var person = new Object();
+person.fname = "Ashik";
+person.lname = "Mahmud";
+person.age = 24;
+person.email = "ashikmahmud12345@gmail.com";
+document.write(person.age);
+document.write(person["age"]);
+
+output:2424 
+
+
+
+Array Of Object
+
+var student = [
+    { name: "Ashik", age: "24" },
+    { name: "Arif", age: "25" },
+    { name: "Sayket", age: "25" }
+];
+for (var a = 0; a < student.length; a++) {
+    document.write(student[a].name + " " + student[a].age + "<br>");
+}
+
+output:
+Ashik 24
+Arif 25
+Sayket 25
+
+
+Const variable with array & Object
+
+const a = [10, 20, 30];
+a[1] = 25;
+a[2] = 35;
+document.write(a);
+
+
+output:
+10,25,35 
+
+
+javaScript For in loop specially used object
+
+var a = {
+    fname: "Ashik",
+    lname: "Mahmud",
+    age: 24,
+    email: "ashikmahmud12345@gmail.com"
+};
+for (var key in a) {
+    document.write(a[key] + "<br>");
+}
+for (var key in a) {
+    document.write(key + ": " + a[key] + "<br>");
+}
+
+
+output:
+Ashik
+Mahmud
+24
+ashikmahmud12345@gmail.com
+fname: Ashik
+lname: Mahmud
+age: 24
+email: ashikmahmud12345@gmail.com
+
+
+Array Map Function
+var a = [1, 2, 3, 4, 5];
+
+var b = a.map(test);
+document.write(b);
+
+function test(x) {
+    return x * 10;
+}
+
+output:10,20,30,40,50 
+
+JavaScript String method
+
+var str = "JavaScript is a Great  is Language";
+var a = str.length;
+var b = str.toLowerCase();
+var c = str.toUpperCase();
+var d = str.startsWith("Java"); // Check the First word
+var e = str.endsWith("Language");
+var f = str.search("is"); //return position
+var g = str.match(/is/g); // all match element value print and g means global
+var h = str.indexOf("is");
+var i = str.lastIndexOf("is");
+var j = str.replace("is", "are");
+var k = str.replace(/is/g, "are");
+var l = str.charAt(7); //index input print value
+var m = str.charCodeAt(1); // input index print unicode value number
+var n = str.split(" ");
+var o = str.repeat(2);
+var p = str.slice(2);
+
+document.write(a + "<br>");
+document.write(b + "<br>");
+document.write(c + "<br>");
+document.write(d + "<br>");
+document.write(e + "<br>");
+document.write(f + "<br>");
+document.write(g + "<br>");
+document.write(h + "<br>");
+document.write(i + "<br>");
+document.write(j + "<br>");
+document.write(k + "<br>");
+document.write(l + "<br>");
+document.write(m + "<br>");
+document.write(n + "<br>");
+document.write(o + "<br>");
+document.write(p + "<br>");
+
+output:
+34
+javascript is a great is language
+JAVASCRIPT IS A GREAT IS LANGUAGE
+true
+true
+11
+is,is
+11
+23
+JavaScript are a Great is Language
+JavaScript are a Great are Language
+i
+97
+JavaScript,is,a,Great,,is,Language
+JavaScript is a Great is LanguageJavaScript is a Great is Language
+vaScript is a Great is Language
+
+
+JavaScript Number Method
+
+var a = "99";
+var num = Number(a); //convert string to number
+document.write(num + 10);
+
+output:109 
+
+
+var a = "99.99";// first int number print
+var num = parseInt(a); //convert string to number
+document.write(num);
+output:99 
+
+
+
+var a = "99.999";
+var b = 99.999;
+// first int number print
+var num1 = parseInt(a); //convert string to number
+var num2 = parseFloat(a);
+var num3 = isFinite(a);
+var num4 = Number.isInteger(a); // false because a's value is float
+
+document.write(num1 + "<br>");
+document.write(num2 + "<br>");
+document.write(num3 + "<br>");
+document.write(num4 + "<br>");
+
+output:
+99
+99.999
+true
+false
+
+
+JavaScript Math Methods
+var a = Math.ceil(2.25); //print 3
+var b = Math.floor(2.25); //print 2
+var c = Math.round(2.25); //print 2
+var d = Math.round(2.65); //print 3
+var e = Math.trunc(2.45); //print int value which is 2
+var f = Math.max(2, 10, 20, 35, 4, 50);
+var g = Math.min(2, 10, 20, 35, 4, 50);
+var h = Math.sqrt(4);
+var i = Math.cbrt(125); //Cubic root
+var j = Math.pow(2, 3);
+var k = Math.random(); //print random value when every refresh
+var l = Math.floor(Math.random() * 10) + 1; //print 1 to 10 randomely
+var m = Math.abs(5.25); //abs means absolute value
+
+document.write(a + "<br>");
+document.write(b + "<br>");
+document.write(c + "<br>");
+document.write(d + "<br>");
+document.write(e + "<br>");
+document.write(f + "<br>");
+document.write(g + "<br>");
+document.write(h + "<br>");
+document.write(i + "<br>");
+document.write(j + "<br>");
+document.write(k + "<br>");
+document.write(l + "<br>");
+document.write(m + "<br>");
+
+output:
+3
+2
+2
+3
+2
+50
+2
+2
+5
+8
+0.1103860326261924
+7
+5.25
+
+
+JavaScript Date Object
+
+var now = new Date();
+
+document.write(now + "<br>");
+document.write(now.toDateString() + "<br>");
+document.write(now.getDate() + "<br>");
+document.write(now.getFullYear() + "<br>");
+document.write(now.getMonth() + "<br>"); // first Month 0 then increment
+document.write(now.getDay() + "<br>"); //first Mday Sunday which is 0 then increment
+document.write(now.getHours() + "<br>");
+document.write(now.getMinutes() + "<br>");
+document.write(now.getSeconds() + "<br>");
+document.write(now.getMilliseconds() + "<br>");
+
+output:
+Sun Mar 01 2020 22:47:13 GMT+0600 (Bangladesh Standard Time)
+Sun Mar 01 2020
+1
+2020
+2
+0
+22
+47
+13
+101
+
+
+
+Document Object Module(DOM)
+HTML DOM Tree
+DOM Targeting Method
+Id-->document.getElementById(id)
+Class Name-->document.getElementsByClassName(name)
+Tag Name-->document.getElementsByTagName(name)
+
+var element;
+element = document.links[0];
+console.log(element);
+
+var element;
+element = document.getElementsByTagName("ul");
+console.log(element);
+
+var element;
+element = document.getElementsByClassName("list");
+console.log(element);
+
+var element;
+element = document.getElementsById("header");
+console.log(element);
+
+
+DOM Get and Set Methods
+
+What we can get with DOM
+HTML
+Text
+Attribute
+
+Dom Get Method
+
+innerText
+innerHtml
+getAttribute
+getAttributeNode
+attributes
+ 
+var element;
+element = document.getElementById("content").innerText;
+console.log(element);
+
+var element;
+element = document.getElementById("content").innerHTML;
+console.log(element);
+
+var element;
+element = document.getElementById("header").getAttribute("class");
+console.log(element);
+
+
+var element;
+element = document.getElementById("header").getAttribute("onclick");
+console.log(element);
+
+var element;
+element = document.getElementById("header").getAttributeNode("onclick");
+console.log(element);
+
+
+DOM Set Methods
+innerText
+innerHtml
+getAttribute
+removeAttribute
+attributes
+
+
+
+var element;
+document.getElementById("header").innerText="wow"
+element = document.getElementById("header").innerHTML;
+console.log(element);
+
+
+
+var element;
+document.getElementById("header").innerHTML = "<h1>wow</h1>";
+element = document.getElementById("header").innerHTML;
+console.log(element);
+
+
+DOM 
+querySelector() ---->document.querySelector(CSS Selector)
+ querySelectorAll()---->document.querySelector(CSS Selector)
+
+
+querySelector()--->get and set both work this selector
+
+var element;
+document.querySelector("#header").innerHTML = "<h1>wow</h1>";
+element = document.querySelector(".list");
+console.log(element);
+
+
+querySelectorAll()
+var element;
+document.querySelector("#header").innerHTML = "<h1>wow</h1>";
+element = document.querySelectorAll("ul");
+console.log(element);
+
+
+var element;
+document.querySelector("#header").innerHTML = "<h1>wow</h1>";
+element = document.querySelectorAll("ul")[1].innerHTML;
+console.log(element);
+
+
+var element;
+element = document.querySelectorAll("#header h1")[1].innerHTML;
+console.log(element);
+
+
+DOM CSS Styling Methods
+var element;
+element = document.querySelector("#header").style.border;
+console.log(element);
+
+
+var element;
+element = document.querySelector("#header").style.color;
+console.log(element);
+
+
+var element;
+document.querySelector("#header").style.backgroundColor = "tan";
+element = document.querySelector("#header").style.color= "blue";
+console.log(element);
+
+
+DOM addEventListener()
+
+var element;
+document.getElementById("header").onclick = abc; //when click then color change
+function abc() {
+    document.getElementById("header").style.background = "green";
+}
+
+var element;
+document.getElementById("header").onmouseenter = abc; //when cursor put the section then change the color
+function abc() {
+    document.getElementById("header").style.background = "green";
+}
+
+var element;
+document.getElementById("header").addEventListener("click", abc);//when click the section then color change
+function abc() {
+    document.getElementById("header").style.background = "green";
+}
+
+
+var element;
+document.getElementById("header").addEventListener("mouseenter", abc); //mouse put on the section then change the color
+document.getElementById("header").addEventListener("click", function() {  // if click the section then change the border
+    document.getElementById("header").style.border = "10px solid red";
+});
+function abc() {
+    document.getElementById("header").style.background = "green";
+}
+
+
+var element;
+document.getElementById("header").addEventListener("click", abc); //if one click the section then change the color and border
+document.getElementById("header").addEventListener("click", function() {
+    document.getElementById("header").style.border = "10px solid red";
+});
+function abc() {
+    document.getElementById("header").style.background = "green";
+}
+
+
+
+document.querySelector("#inner").addEventListener("click", function() {
+    alert("Inner Div");
+});
+document.querySelector("#outer").addEventListener("click", function() {
+    alert("Outer Div");
+});
+
+
+
+
+var element;
+document.getElementById("header").addEventListener("mouseleave", abc); //when we cursor far away from this section then change the color
+function abc() {
+    document.getElementById("header").style.background = "green";
+}
+
+
+
+var element;
+document.getElementById("header").addEventListener("mouseleave", abc);
+document.getElementById("header").addEventListener("click", xyz);
+function abc() {
+    document.getElementById("header").style.background = "green";
+}
+function xyz() {
+    document.getElementById("header").removeEventListener("mouseleave", abc);
+}
+
+
+
+DOM Traversal Method
+target child and change parent element color 
+ If there is not exist parent node then used parentNode replace by parentElement
+
+parentNode/ParentElement
+
+ var a = (document.getElementById("inner").parentElement.style.background =
+    "red");
+console.log(a);
+
+
+Children/childNodes
+var a = document.getElementById("inner").children;
+console.log(a);
+
+var a = document.getElementById("inner").children[1];//target specific element
+console.log(a);
+
+var a = document.getElementById("inner").children[1].style.background ="red"; //change the specific element color
+console.log(a);
+
+
+
+DOM Create Method
+var newElement= document.createElement("h2");
+var newText= document.createTextNode("this is just text");
+var newComment= document.createComment("this is comment");
+
+console.log(newElement);
+console.log(newText);
+console.log(newComment);
+
+
+DOM cloneNode Method
+
+var target = document.getElementById("sidebar").children[0];
+var copyElement = target.cloneNode(true);
+console.log(copyElement);
+document.getElementById("footer").appendChild(copyElement); //other element copy and pest in this section
+
+
+DOM contains method
+var parentElement = document.getElementById("header");
+var target = document.getElementById("abc");
+var find = parentElement.contains(target);//find out this id is contains header/parents or not  
+
+console.log(find);
+
+
+DOM isEqualNode()---->two target value same or not 
+this method maintain
+Node Type, Node Name, Node value, Child Node, atttributes, attribute value
+
+
+
+
+formEvent of JavaScript----onfocus,onblur,oninput,oninvalid,onsubmit,onchange
+
+<body>
+        <form action="" onsubmit="submitFunction()">
+            <label for="">Name</label
+            ><input
+                type="text"
+                id="fname"
+                onfocus="focusFunction(this)"
+                onblur="blurFunction(this)"
+                oninput="inputFunction(this)"
+                oninvalid="alert('please fill the first Name')"
+                required
+            /><br /><br />
+            <label for="">Class</label
+            ><input
+                type="text"
+                id=""
+                onfocus="focusFunction(this)"
+                onblur="blurFunction(this)"
+            /><br /><br />
+            <label for="">Country</label>
+            <select
+                id=""
+                onfocus="focusFunction(this)"
+                onblur="blurFunction(this)"
+                onchange="changeFunction(this)"
+            >
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Iran">Iran</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="America">America</option>
+                <option value="Nepal">Nepal</option>
+            </select>
+            <input type="submit" />
+            <br />
+        </form>
+        <div id="test" style="border:1px solid red;margin-top:20px;"></div>
+        <script>
+            function focusFunction(element) {
+                element.style.background = "lime";
+            }
+            function blurFunction(element) {
+                element.style.background = "";
+            }
+            function inputFunction(element) {
+                var x = element.value;
+                document.getElementById("test").innerHTML = x;
+            }
+            function changeFunction(element) {
+                var x = element.value;
+                document.getElementById("test").innerHTML = x;
+            }
+            function submitFunction() {
+                var x = document.getElementById("fname").value;
+                alert("hello " + x);
+            }
+        </script>
+    </body>
+</html>
+
+
+SetInterval() &clearInterval()
+
+var a = 0;
+var id = setInterval(animation, 500);
+function animation() {
+    a = a + 10;
+    if (a == 200) {
+        clearInterval(id);
+    } else {
+        var target = document.getElementById("test");
+        target.style.marginLeft = a + "px";
+    }
+}
+
+
+
+var a = 0;
+var id = setInterval(animation, 500);
+function animation() {
+    a = a + 10;
+    if (a == 200) {
+        clearInterval(id);
+    } else {
+        var target = document.getElementById("test");
+        target.style.width = a + "px";
+    }
+}
+
+
+
+
+setTimeout() & clearTimeout()
+
+var id = setTimeout(animation, 3000);
+function animation() {
+    var target = document.getElementById("test");
+    target.style.width = "500px";
+}
+function stopAnimation() {
+    clearTimeout(id);
+}
+
+
+BOM Introduction
+Window height 
+ <body onresize="resizeFunction()">
+        <script>
+            function resizeFunction() {
+                console.clear();
+                var iHeight = window.innerHeight;
+                console.log("Inner Height :" + iHeight);
+
+                var oHeight = window.outerHeight;
+                console.log("Outer Height : " + oHeight);
+            }
+        </script>
+
+
+window width
+
+  <body onresize="resizeFunction()">
+        <script>
+            function resizeFunction() {
+                console.clear();
+                var iWidth = window.innerWidth;
+                console.log("Inner Width :" + iWidth);
+
+                var oWidth = window.outerWidth;
+                console.log("Outer Width : " + oWidth);
+            }
+        </script>
+    </body>
+
+
+Window Open()
+_blank,_parent,_self,_top
+
+ <body">
+        <button onclick="openWindow()">Open Window</button>
+        <script>
+            function openWindow() {
+              window.open("http://www.youtube.com/","","width=500px,height=200px");
+            }
+        </script>
+    </body">
+
+
+ <body">
+        <button onclick="openWindow()">Open Window</button>
+        <script>
+            function openWindow() {
+              window.open("http://www.youtube.com/","_parent","width=500px,height=200px");
+            }
+        </script>
+    </body">
+
+   
+Window Open() & window close
+
+      <body">
+        <button onclick="openWindow()">Open Window</button>
+        <button onclick="closeWindow()">Close Window</button>
+        <script>
+            var myWindow;
+            function openWindow() {
+             myWindow= window.open("http://www.youtube.com/","","width=500px,height=200px left=100px,top=200px");
+            }
+            function closeWindow(){
+             myWindow.close();   
+            }
+        </script>
+    </body">
+</html>
+
+
+Window moveBy() & moveTo()
+  <body">
+        <button onclick="openWindow()">Open Window</button>
+        <button onclick="moveWindow()">Move  Window</button>
+        <script>
+            var myWindow;
+            function openWindow() {
+             myWindow= window.open("","","width=500px,height=200px left=100px,top=200px");
+             myWindow.document.write("<p>This is myWindow.</p>");
+            }
+            function moveWindow(){
+             myWindow.moveTo(200,200); 
+             myWindow.focus();  
+            }
+        </script>
+    </body">
+</html>
+
+
+Window resizeBy() & resizeTo()
+
+  <button onclick="openWindow()">Open Window</button>
+        <button onclick="resizeWindow()">Resize  Window</button>
+        <script>
+            var myWindow;
+            function openWindow() {
+             myWindow= window.open("","","width=500px,height=200px left=100px,top=200px");
+             myWindow.document.write("<p>This is myWindow.</p>");
+            }
+            function resizeWindow(){
+             myWindow.resizeTo(400,400); 
+             myWindow.focus();  
+            }
+        </script>
+    </body"> 
+</html>
+
+
+resizeTo()
+    <body">
+        <button onclick="openWindow()">Open Window</button>
+        <button onclick="resizeWindow()">Resize  Window</button>
+        <script>
+            var myWindow;
+            function openWindow() {
+             myWindow= window.open("","","width=500px,height=200px left=100px,top=200px");
+             myWindow.document.write("<p>This is myWindow.</p>");
+            }
+            function resizeWindow(){
+             myWindow.resizeBy(400,400); //parent margin 200 then resize 400 so window size larger which is 600 
+             myWindow.focus();  
+            }
+        </script>
+    </body"> 
+</html>
+
+Window scrollBy() & scrollTo
+ <body>
+        <h1>JavaScript: scrollTo & scrollBy</h1>
+        <button onclick="scrollWindow()">
+            Scroll Window
+        </button>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis molestias officiis quibusdam exercitationem nulla
+            temporibus quam, suscipit, eum error sapiente sint cum fugit amet
+            explicabo? Eum aspernatur recusandae deleniti eveniet!Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Perspiciatis molestias
+            officiis quibusdam exercitationem nulla temporibus quam, suscipit,
+            eum error sapiente sint cum fugit amet explicabo? Eum aspernatur
+            recusandae deleniti eveniet! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Perspiciatis molestias officiis quibusdam
+            exercitationem nulla temporibus quam, suscipit, eum error sapiente
+            sint cum fugit amet explicabo? Eum aspernatur recusandae deleniti
+            eveniet!
+        </p>
+        <script>
+            function scrollByWindow() {
+                Window.scrollBy(0, 20);
+            }
+        </script>
+    </body>
+</html>
+
+
+
+Location Object
+
+reload()
+<body>
+   
+        <button onclick="reloadFunction()">Reload  Window</button>
+        
+        <script>
+     
+            function reloadFunction(){
+                location.reload();
+            }
+        </script>
+
+
+assign()
+    <body>
+        <button onclick="reloadFunction()">Reload  Window</button>   
+        <script>
+            function reloadFunction(){
+                location.assign("http://www.google.com");
+            }
+        </script>
+    </body"> 
+</html>
+
+
+
+History Object
+Back and Forward Method
+ <body>
+        <button onclick="backFunction()">Back</button>   
+        <button onclick="forwardFunction()">Forward</button> 
+        <script>
+            function backFunction(){
+               history.back();
+            }
+            function forwardFunction(){
+               history.forward();
+            }
+        </script>
+    </body"> 
+</html
+
+
+go Method
+    <body>
+        <button onclick="goFunction()">Go Button</button>
+
+        <script>
+            function goFunction() {
+                history.go(2);
+            }
+        </script>
+    </body>
+</html>
+
