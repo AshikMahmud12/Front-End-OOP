@@ -1,0 +1,427 @@
+const firstName="Ashik";
+const lastName="Mahmud";
+const age=25;
+const profession="web developer";
+function showBio()
+{//template string
+return `My name is ${firstName.toUpperCase()} ${lastName.toUpperCase()}  and I am ${age} and I am a ${profession}`;	
+}
+document.write(showBio());
+
+output:
+My name is ASHIK MAHMUD and I am 25 and I am a web developer
+using for dynamic website
+
+template tagging---->html inside data  are doing dynamic
+
+default argument
+function add(num1,num2)
+return num1+num2;
+console.log(add(1,3));---->passing the parameter
+output: 4
+
+function add(num1,num2=5)--->working when passing parameter are not working
+return num1+num2;
+console.log(add(1,3));---->passing the parameter
+output: 4
+
+const add=function(num1=2,num2){
+return num1+num2;
+console.log(add(undefined,3));---->passing the parameter
+output: 5
+
+Arrow function
+if you return a single statement don't have to use {}
+const add=(num1=2,num2)=>  num1+num2;
+console.log(add(undefined,3));
+output: 5
+
+if you return a single parameter don't have to use ()
+const add=num1=>  num1+3;
+console.log(add(2));
+output: 5
+
+where not to use arrow function
+const self={
+firstName:"ashik",
+age:25,
+showBio:function(){
+console.log(this);
+return `I am ${this.firstName} and I am ${this.age}`
+};
+console.log(self.showBio());
+output: 
+I am Ashik and I am 25 
+
+map function
+const marks=[80,95,36,85];
+const dbleMarks=marks.map(mark=>mark*2);  //iterate each number
+console.log(dbleMarks); //return an array with ultimate result(new array)
+output:
+[160,190,72,170]
+
+forEach function
+const marks=[80,95,36,85];
+let dbl=[];
+marks.foreach(mark=>{
+dbl.push(mark*2); 
+});
+console.log(dbl); 
+output:
+[160,190,72,170]
+
+
+finding the first true value
+const marks=[80,95,100,36,85];
+const result="marks.find(mark=>mark>=90);
+console.log(result);
+output:95
+
+findIndex function()---->showing the first true index value
+
+every()--->when satisfied every value true then return true other wise return false
+some()--->when satisfied one value true then return true other wise return false
+
+
+filter Helper
+showing all true value
+const marks=[80,95,100,36,85];
+const result="marks.filter(mark=>mark>=90);
+console.log(result);
+output:95,100;
+
+reduce helper working with adding the number
+const marks=[80,95,100,36,85];
+const result="marks.reduce((sum,number) =>{
+return(sum+=number);
+},0);
+console.log(result);
+
+
+finding a certain user
+const id=1;
+const findUser=user.find(user=>user.id=id)
+console.log(findUser); 
+console.log(result);
+output:95,100;
+
+Rest And Spread---->adding new value which array is already exixt
+const myProfile = ["samim", "lastName", 26, "webdeveloper"];
+Rest and spread operator
+
+spread operator
+const updatedProfile = [...myProfile, "Programmer"];
+
+
+ const groceries = ["wheat", "banana"];
+ const anotherGroceries = ["salt"];
+ const updatedGroceries = [...groceries, "milk", ...anotherGroceries];
+console.log(updatedGroceries);
+
+ const firstName = "samim";
+ const updatedName = [...firstName];
+
+
+showing all values using rest operator by using a new array
+Rest operator
+function sayBio(firstName, age, ...values) {
+  //Rest operator
+  return {
+    firstName: firstName,
+    age: age,
+    rest: values 
+  };
+}
+console.log(sayBio("samim", 25, "webdeveloper", "Programmer"));
+
+
+Array destrucuring
+const myProfile = ["samim", "fazlu", 26, "webdeveloper"];
+const [, , age] = myProfile;
+console.log(age);
+output:26
+
+Object destrucuring
+const post = {
+  id: 1,
+  title: "sample title",
+  body: "sample body",
+ allowComments: true
+};
+const { title, allowComments } = post;
+console.log(title);
+output:
+sample body,true
+
+const post = {
+  id: 1,
+  title: "sample title",
+  body: "sample body",
+  allowComments: true,
+  share: {
+    facebook: true,
+    twitter: true,
+    linkedin: false
+  }
+};
+
+const { facebook } = post.share;
+console.log(facebook);
+
+output:true
+
+
+  
+//working with function (destructuring in mind)
+
+function bio({ lastName, firstName, age }) {
+  return `${firstName} ${lastName} is ${age} years old`;
+}
+
+console.log(
+  bio({
+    firstName: "Ashik",
+    lastName: "Mahmud",
+    age: 25
+  })
+);
+output:Ashik Mahmud is 25 years old
+
+take id 10,2,3 but avoid id 4
+const comments = [
+  {
+    id: 10,
+    body: "first comment"
+  },
+  {
+    id: 2,
+    body: "second comment"
+  },
+  {
+    id: 4,
+    body: "dump comment"
+  },
+  {
+    id: 3,
+    body: "correct comment"
+  }
+];
+
+const badComment = comments.findIndex(comment => comment.id === 4);
+console.log(badComment);
+
+const choosenComment = [
+  ...comments.slice(0, badComment),
+  ...comments.slice(badComment + 1)
+];
+console.log(choosenComment);
+
+
+//Es6 improved way of writing Object literal
+function bio({firstName, lastName, choosenLng}){
+  return{
+    firstName,
+    lastName,
+    common:['Html', 'css', 'basic javascript'],
+    choosenLanguage(){
+      return `My first NAme-${this.firstName}.My second Name-${this.lastName} and I prefer ${choosenLng}`
+    }
+  }
+}
+
+
+const myBio = bio({
+  firstName: 'Ashik',
+  lastName: 'Mahmud',
+  choosenLng: 'Javascript' 
+});
+
+console.log(myBio.firstName);
+
+console.log(myBio.lastName);
+console.log(myBio.choosenLanguage())
+
+
+output:
+Ashik
+Mahmud
+My First Name Ashik.My second Name Mahmud and I prefer javaScript
+
+
+using continue statement
+const lng=['html','css','js'];
+for(let i=0;i<lng.length;i++)
+if(lng[i]==='css'){
+continue //skip this element which is if condition
+}
+console.log(lng[i]);
+}
+output:
+html,js
+
+using break statement
+const lng=['html','css','js'];
+for(let i=0;i<lng.length;i++)
+if(lng[i]==='css'){
+break; //stop the program when condition is true
+}
+console.log(lng[i]);
+}
+output:
+html
+
+using forEach statement
+const lng=['html','css','js'];
+lng.foreach((eachlng,i)=>{ //break and continue don't work
+consloe.log(i,eachlng);
+})
+
+ooutput:
+html,js
+
+//for in (working with index)
+const obj={
+firstName:'Ashik',
+lastName:'Mahmud'
+}
+for(const mine in obj){
+console.log(obj[mine]);
+}
+
+output:
+Ashik
+Mahmud
+
+for of loop 
+not looping object
+break, continue will working
+
+const lng=['html','css','js'];
+for(let myLng of lng.entries()){
+console.log(myLng);
+}
+
+output
+html
+css
+js
+
+
+//Class 
+
+class Person{
+  //property
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+    this.lng = [];
+    console.log('Running ...')
+  }
+  
+  //method
+  getBio(){
+    return `${this.name}.age- ${this.age}
+    choosenLng - ${this.lng.join(',')}
+    ` 
+  }
+  setLng(lng){
+    this.lng.push(lng)
+  }
+}
+
+const samim = new Person('samim', 26);
+console.log(samim.getBio());
+samim.setLng('javascript');//set the language
+console.log(samim.getBio());
+
+
+output:
+running....
+samim.age- 26
+chosenLng -
+
+samim.age-26
+chosenLng-JavaScript
+
+
+//Class 
+
+class Programmer{
+  //property
+  constructor(firstName, age){
+    this.firstName = firstName; //field
+    this.age = age;
+    this.lng = [];
+    console.log('Running ...')
+  }
+  
+  // getfirstName(){
+  //   return this.firstName;
+  // }
+
+  getBio(){
+    return `${this.firstName}-${this.age} ${this.lng}`
+  }
+  //property
+
+  static salery(){
+    console.log('My salery $0')
+  }
+  get nickName(){
+    return this.firstName;
+  }
+  set nickName(value){
+    this.firstName = value.toUpperCase();
+  }
+
+  set Mainlng(lng){
+    this.lng.push('Javascript');
+  }
+}
+
+class specialProgrammer extends Programmer{
+  constructor(firstName, age, specialLng){
+    super(firstName, age);
+    this.specialLng = specialLng;
+  }
+  getBio(){
+    return `${super.getBio()} ${this.speciallng}` 
+  }
+  get speciallng(){
+    return this.specialLng;
+  }
+  set Mainlng(lng){
+   return this.lng.push(lng);
+  }
+
+}
+
+const samim = new Programmer("samim", 26);
+
+const anis = new specialProgrammer("Anis", 26, 'go');
+
+
+//fetch API
+// working like as ajax
+
+fetch('https://jsonplaceholder.typicode/comments')
+.then(data => data.json())
+.then(data => console.log(data))  //
+.catch(e => console.log(e));  //if we find any error then this method catch the error
+
+
+//Behind the scene workingh with Promise
+
+// logData();
+//like we get data but those get data showing the screen in 3 second later
+
+ const logDataP = new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve(1);         //If we want get successfull data then use resolve 
+           },3000);
+     });
+logDataP
+    .then(data => {
+        console.log(data);
+    })
+    .catch(e => console.log(e));
