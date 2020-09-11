@@ -1,0 +1,59 @@
+<HTML>
+	<HEAD>
+	<TITLE> Simple Calculator</TITLE>
+	<script type = "text/javascript">
+	<!--
+	function operationadd(value){
+		document.getElementById("display").value += value;
+	}
+	
+	function result(){
+		document.getElementById("display").value = eval(document.getElementById("display").value);
+	}
+	
+	function reset(){
+		document.getElementById("display").value = '';
+	}
+	-->
+	</SCRIPT>
+	</HEAD>
+	<BODY>
+				<FORM NAME="myForm">
+			<TABLE BORDER=2 align="center">
+				<TR>
+					<TD>
+						<INPUT TYPE="text" ID="display" NAME="display" style="width:99%"><br>
+				</TD>
+				</TR>
+				<TR>
+					<TD>
+						<INPUT TYPE="button" NAME="7"   VALUE="  7  " onclick="operationadd(7)">
+						<INPUT TYPE="button" NAME="8"   VALUE="  8  " onclick="operationadd(8)">
+						<INPUT TYPE="button" NAME="9" VALUE="  9  " onclick="operationadd(9)">
+						<INPUT TYPE="button" NAME="+"  VALUE="  +  " onclick="operationadd('+')">
+						<br>
+						<INPUT TYPE="button" NAME="4"  VALUE="  4  " onclick="operationadd(4)">
+						<INPUT TYPE="button" NAME="5"  VALUE="  5  " onclick="operationadd(5)">
+						<INPUT TYPE="button" NAME="6"   VALUE="  6  " onclick="operationadd(6)">
+						<INPUT TYPE="button" NAME="-" VALUE="  -  " onclick="operationadd('-')">
+						<br>
+						<INPUT TYPE="button" NAME="1" VALUE="  1  " onclick="operationadd(1)">
+						<INPUT TYPE="button" NAME="2" VALUE="  2  " onclick="operationadd(2)">
+						<INPUT TYPE="button" NAME="3"  VALUE="  3  " onclick="operationadd(3)">
+						<INPUT TYPE="button" NAME="*" VALUE="  x  " onclick="operationadd('*')">
+						<br>
+						<INPUT TYPE="button" NAME="c" VALUE="  c  " onclick="reset();">
+						<INPUT TYPE="button" NAME="0"  VALUE="  0  " onclick="operationadd(0)">
+						<INPUT TYPE="button" NAME="="  VALUE="  =  " onclick="result();">
+						<INPUT TYPE="button" NAME="/"   VALUE="  /  " onclick="operationadd('/')">
+						<br>
+						<INPUT TYPE="button" NAME="x2"   VALUE="  x2  " onclick="myForm.display.value = eval(myForm.display.value*myForm.display.value)">
+						<INPUT TYPE="button" NAME="%"   VALUE="  % " onclick="myForm.display.value = (eval(myForm.display.value)/100)">
+						<INPUT TYPE="button" NAME="."   VALUE="." onclick="operationadd('.')">
+					
+					</TD>
+				</TR>
+			</TABLE>
+		</FORM>
+	</BODY>
+</HTML>

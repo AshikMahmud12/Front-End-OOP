@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title> Registration </title>
+<h1><em><center> East West University</center></em></h1>
+
+<img src="EWU.jpg" alt=" picture" width="200" height="200"><br><br>
+
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+div {
+    background-color: white;
+    width:;
+    border: 1px solid black;
+    padding: 1px;
+    margin: 1px;
+}
+</head>
+</style>
+<body>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#Information of EWU">Information of EWU</a></li>
+  <li><a href="#Facilities">Facilities</a></li>
+  <li><a href="#Registration">Registration</a></li>
+</ul>
+
+<div>
+<h1><em><center> Registration Form</center></em></h1>
+<form action="/action_page.php">
+  
+ First name: <input type="text" name="fname"><br><br>
+  Last name: <input type="text" name="lname"><br><br>
+ Email: <input type="text" name="email" ><br><br>
+Phone Number:<input type="text" name="Phone Number">
+ <h5>Gender:<br>
+<input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other  <br><br>
+ 
+<h5>Which subjects are you interested in? <br>
+
+<input type="checkbox" name="text" value="CSE">CSE
+<br>
+<input type="checkbox" name="text" value="EEE">EEE<br>
+<input type="checkbox" name="text" value="ICE">ICE<br>
+<input type="checkbox" name="text" value="ETE">ETE<br>
+
+<h5>Division:
+
+<select name="Division">
+    <option value="Dhaka">Dhaka</option>
+    <option value="Chittagong">Chittagong</option>
+    <option value="Rangpur">Rangpur</option>
+    <option value="Khulna">Khulna</option>
+  </select>
+  <br><br>
+  
+<h5> Comments:</h5> 
+<textarea name="message" rows="3" cols="50">.</textarea> <br><br>
+<input type="submit"value="submit">
+  <input type="reset">
+</form>
+</div>
+</body>
+</html>

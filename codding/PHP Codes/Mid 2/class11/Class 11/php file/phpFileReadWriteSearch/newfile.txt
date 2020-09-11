@@ -1,0 +1,28 @@
+ARRAY
+1.	Take Input in array and print
+2.	Take Input in array and reverse print the array
+3.	Take Input in array and show sum and average of array
+4.	Take two dimensional two array as a input and show the summation in output
+
+FUNCTION
+Least Challenging
+1.	Write a function that receives 5 integers and returns the sum and average of these numbers. Call this function from main() and print the results in main().
+2.	A positive integer is entered through the keyboard. Write a function to determine whether the input number is a perfect number or not.
+3.	hello
+4.		5.		6.	
+7.		8.		9.	
+10.		11.		12.	
+13.	
+14.	Write 4 different functions for calculating the area of a triangle, rectangle, square and circle.
+
+Challenging
+1.	Write necessary functions for number conversion, e.g., decimal to binary, binary to decimal, decimal to octal, octal to decimal.
+2.	Write a recursive function to find the factorial of a given integer.
+3.	Write a recursive function to obtain the first 25 numbers of a Fibonacci sequence. In a Fibonacci sequence the sum of two successive terms gives the third term. Following are the first few terms of the Fibonacci sequence:
+1    1    2    3    5    8    13    21    34    55    89 …	
+
+
+
+
+ewu
+rampura

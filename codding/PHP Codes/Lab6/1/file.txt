@@ -1,0 +1,10 @@
+Name	Subject	Mark
+Akash	Phy	5
+Babul	Phy	10
+Rity	Phy	8
+Akash	Math	12
+Babul	Math	6
+Rity	Math	14
+Akash	Che	9
+Babul	Che	7
+Rity	Che	8

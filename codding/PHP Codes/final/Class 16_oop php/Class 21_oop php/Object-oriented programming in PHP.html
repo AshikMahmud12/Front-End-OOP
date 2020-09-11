@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://zetcode.com/lang/php/oopi/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Object-oriented programming in PHP</title>
+<link rel="stylesheet" href="./Object-oriented programming in PHP_files/format2.css" type="text/css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="PHP, learn PHP, OOP, object oriented programming, programming, language">
+<meta name="description" content="In this part of the PHP tutorial, we cover Object-oriented programming.">
+<meta name="author" content="Jan Bodnar">
+
+<link rel="stylesheet" type="text/css" href="./Object-oriented programming in PHP_files/dark-floating.css"></head>
+
+<body><div class="cc_banner-wrapper "><div class="cc_banner cc_container cc_container--open"><a href="http://zetcode.com/lang/php/oopi/#null" data-cc-event="click:dismiss" target="_blank" class="cc_btn cc_btn_accept_all">Got it!</a><p class="cc_message">This website uses cookies to ensure you get the best experience on our website </p><a class="cc_logo" target="_blank" href="http://silktide.com/cookieconsent">Cookie Consent plugin for the EU cookie law</a></div></div>
+
+<div class="container">
+
+<div id="wide_ad" class="ltow">
+<script src="./Object-oriented programming in PHP_files/ca-pub-9706709751191532.js.download"></script><script async="" src="./Object-oriented programming in PHP_files/adsbygoogle.js.download"></script>
+<!-- 160x600, August 2011 -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-9706709751191532" data-ad-slot="2484182563" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./Object-oriented programming in PHP_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div class="content">
+
+<header>
+
+<nav>
+<a href="http://zetcode.com/" title="Home">Home</a>
+<a href="http://zetcode.com/lang/php/">Contents</a>
+<a title="Subscribe to ZetCode news" href="http://zetcode.us13.list-manage.com/subscribe?u=9def9ccd4c70dbbaf691f90fc&amp;id=6556210f80">Subscribe</a>
+
+<div class="nav_r">
+<a href="http://zetcode.com/lang/php/regex/">Previous</a>
+<a href="http://zetcode.com/lang/php/oopii/">Next</a>
+</div>
+</nav>
+
+</header>
+
+
+<h1>Object-oriented programming in PHP</h1>
+
+<p>
+In this part of the PHP tutorial, we talk about object-oriented 
+programming in PHP.
+</p>
+
+<p>
+There are three widely used programming paradigms there: procedural programming, 
+functional programming, and object-oriented programming. PHP 5 supports both 
+procedural and object-oriented programming. Earlier versions of PHP had limited 
+or no support for OOP. 
+</p>
+
+<div class="big_hor">
+<script async="" src="./Object-oriented programming in PHP_files/adsbygoogle.js.download"></script>
+<!-- big_horizontal -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9706709751191532" data-ad-slot="2904953388" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./Object-oriented programming in PHP_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<p>
+<em>Object-oriented programming (OOP)</em> is a programming paradigm that uses objects
+and their interactions to design applications and computer programs. 
+</p>
+
+<p>
+The basic programming concepts in OOP are:
+</p>
+
+<ul>
+    <li>Abstraction</li>
+    <li>Polymorphism</li>
+    <li>Encapsulation</li>
+    <li>Inheritance</li>
+</ul>
+
+<p>
+<em>Abstraction</em> is simplifying complex reality by modeling classes 
+appropriate to the problem. 
+<em>Polymorphism</em> is the process of using an operator or function 
+in different ways for different data input. 
+<em>Encapsulation</em> hides the implementation details of a class 
+from other objects.
+<em>Inheritance</em> is a way to form new classes  using classes 
+that have already been defined.
+</p>
+
+
+<h2>Objects</h2>
+
+<p>
+Objects are basic building blocks of a PHP OOP program. An object is a combination 
+of data and methods. In a OOP program, we create objects. These objects communicate 
+together through methods. Each object can receive messages, send messages, and process data. 
+</p>
+
+<p>
+There are two steps in creating an object. First, we create a class. A <em>class</em> 
+is a template for an object. It is a blueprint which describes the state and behavior 
+that the objects of the class all share. A class can be used to create many objects. 
+Objects created at runtime from a class are called <em>instances</em> of that 
+particular class. 
+</p>
+
+<div class="codehead">simpleclass.php</div>
+<pre class="code">&lt;?php
+
+class Simple {}
+
+$object = new Simple();
+print_r($object);
+echo gettype($object), "\n";
+
+?&gt;
+</pre>
+
+<p>
+In our first example, we create a simple object. 
+</p>
+
+<pre class="explanation">class Simple {}
+</pre>
+
+<p>
+This is a simple class definition. The body of the template is empty. It does not
+have any data or methods. 
+</p>
+
+<pre class="explanation">$object = new Simple();
+</pre>
+
+<p>
+We create a new instance of the <code>Simple</code> class. For this we have the <code>new</code>
+keyword. The <code>$object</code> variable is the handle to the created object. 
+</p>
+
+<pre class="explanation">print_r($object);
+echo gettype($object), "\n";
+</pre>
+
+<p>
+We use the <code>print_r()</code> function to get information about the object and
+the <code>gettype()</code> function to get the type of the variable. 
+</p>
+
+<pre>$ php simpleclass.php 
+Simple Object
+(
+)
+object
+</pre>
+
+<p>
+We don't get much info, since the class definition was empty. 
+The type of the variable is <code>object</code>.
+</p>
+
+
+<h2>Object attributes</h2>
+
+<p>
+Object attributes is the data bundled in an instance of a class. The 
+object attributes are called <em>instance variables</em> or <em>member fields</em>.
+An instance variable is a variable defined in a class, for which each object
+in the class has a separate copy.
+</p>
+
+<div class="codehead">memberfields.php</div>
+<pre class="code">&lt;?php
+
+class Person {
+
+    public $name = "";
+}
+
+$p1 = new Person();
+$p1-&gt;name = "Jane";
+
+$p2 = new Person();
+$p2-&gt;name = "Beky";
+
+echo $p1-&gt;name . "\n"; 
+echo $p2-&gt;name . "\n"; 
+
+?&gt;
+</pre>
+
+<p>
+In the above PHP script, we have a <code>Person</code> class with
+one member field. 
+</p>
+
+<pre class="explanation">$p1 = new Person();
+$p1-&gt;name = "Jane";
+</pre>
+
+<p>
+We create an instance of the Person class and set the
+<code>$name</code> variable to "Jane". We use the <em>-&gt;</em> operator to 
+access the attributes of objects. 
+</p>
+
+<pre class="explanation">$p2 = new Person();
+$p2-&gt;name = "Beky";
+</pre>
+
+<p>
+We create another instance of the Person class. Here
+we set the variable to "Beky".
+</p>
+
+<pre class="explanation">echo $p1-&gt;name . "\n"; 
+echo $p2-&gt;name . "\n"; 
+</pre>
+
+<p>
+We print the contents of the variables to the console. 
+</p>
+
+<pre>$ php memberfields.php 
+Jane
+Beky
+</pre>
+
+<p>
+We see the output of the script. Each instance of the <code>Person</code> 
+class has a separate copy of the <code>$name</code> member field. 
+</p>
+
+
+<h2>Methods</h2>
+
+<p>
+Methods are functions defined inside the body of a class. They are used to 
+perform operations with the attributes of our objects. Methods are essential 
+in <em>encapsulation</em> concept of the OOP paradigm. For example, we might 
+have a <code>connect()</code> method in our AccessDatabase class. 
+We need not to be informed how exactly the method <code>connect()</code> connects 
+to the database. We only know that it is used to connect to a database. 
+This is essential in dividing responsibilities in programming, especially in large applications. 
+</p>
+
+<div class="codehead">circle.php</div>
+<pre class="code">&lt;?php
+
+class Circle {
+
+    public $radius;
+
+    function setRadius($radius) {
+        $this-&gt;radius = $radius;
+    }
+
+    function area() {
+        return $this-&gt;radius * $this-&gt;radius * M_PI;
+    }
+}
+
+$c = new Circle();
+$c-&gt;setRadius(5);
+
+echo $c-&gt;area(), "\n";
+
+?&gt;
+</pre>
+
+<p>
+In the code example, we have a <code>Circle</code> class. We define two methods.
+</p>
+
+<pre class="explanation"> public $radius;
+</pre>
+
+<p>
+We have one member field. It is the radius of the circle. The <code>public</code>
+keyword is an access specifier. It tells that the variable is fully accessible from the outside
+world. 
+</p>
+
+<pre class="explanation">function setRadius($radius) {
+    $this-&gt;radius = $radius;
+}
+</pre>
+
+<p>
+This is the <code>setRadius()</code> method. It is a normal PHP function. 
+We call functions defined inside classes <em>methods</em>.
+The <code>$this</code> variable is a special variable which
+we use to access the member fields from methods. 
+</p>
+
+<pre class="explanation">function area() {
+    return $this-&gt;radius * $this-&gt;radius * M_PI;
+}
+</pre>
+
+<p>
+The <code>area()</code> method returns the area of a circle. The <code>M_PI</code> is 
+a built-in constant. 
+</p>
+
+<pre>$ php circle.php 
+78.539816339745
+</pre>
+
+<p>
+Running the example gives this output. 
+</p>
+
+
+<h2>Access modifiers</h2>
+
+<p>
+<em>Access modifiers</em> set the visibility of methods and member fields. PHP has 
+three access modifiers: <code>public</code>, <code>protected</code>, and <code>private</code>.
+The <code>public</code> members can be accessed from anywhere. The <code>protected</code> 
+members can be accessed only within the class itself and by inherited and parent classes. 
+The <code>private</code> members may only be accessed by the class that defines the member.
+</p>
+
+<p>
+Access modifiers protect data against accidental modifications. They make the 
+programs more robust.
+</p>
+
+<div class="codehead">access1.php</div>
+<pre class="code">&lt;?php
+
+class Person {
+
+    public $name = "";
+    private $age;
+}
+
+$p = new Person();
+$p-&gt;name = "Jane";
+#$p-&gt;age = 17;
+
+echo $p-&gt;name . "\n";
+
+?&gt;
+</pre>
+
+<p>
+In the above PHP script, we have two member fields; one is declared public, the other private. 
+</p>
+
+<pre class="explanation">$p-&gt;name = "Jane";
+#$p-&gt;age = 17;
+</pre>
+
+<p>
+We access the <code>$name</code> member from the outside world. By the outside world, 
+we mean 'not in the class'. It is OK, since the <code>$name</code> variable is declared 
+<code>public</code>. Accessing the <code>$age</code> member is not possible. The 
+<code>private</code> modifier prohibits this. If we uncomment the code line, we will 
+get the 'Fatal error: Cannot access private property Person::$age' error.
+</p>
+
+<div class="codehead">access2.php</div>
+<pre class="code">&lt;?php
+
+class Base {
+    
+    public $name = "Base";
+    protected $id = 6124;
+    private $is_defined = "yes"; 
+
+}
+
+class Derived extends Base {
+
+    public function info() {
+        echo "This is Derived class\n";
+        echo "Members inherited: \n";
+
+        echo $this-&gt;name . "\n";
+        echo $this-&gt;id . "\n";
+        echo $this-&gt;is_defined . "\n";
+    }
+}
+
+$derived = new Derived();
+$derived-&gt;info();
+
+?&gt;
+</pre>
+
+<p>
+In this PHP script, we have a <code>Derived</code> class which extends the 
+<code>Base</code> class. The <code>Base</code> class has three member fields, 
+all with different access modifiers. The <code>$is_defined</code> member is 
+not inherited. The <code>private</code> modifier prevents this.
+</p>
+
+<pre class="explanation">public function info() {
+</pre>
+
+<p>
+The <code>info()</code> method has a <code>public</code> access modifier. 
+This means, it can be called outside the class environment. 
+</p>
+
+<pre>$ php access2.php 
+This is Derived class
+Members inherited: 
+Base
+6124
+</pre>
+
+<p>
+Running the PHP script, we receive this output. The public and protected 
+members are inherited, the private member is not. 
+</p>
+
+<div class="codehead">system.php</div>
+<pre class="code">&lt;?php
+
+class SysInfo {
+
+    private function get_date() {
+        return date("Y/m/d");
+    }
+
+    private function get_version() {
+        return phpversion();
+    }
+
+    public function getInfo() {
+
+        $date = $this-&gt;get_date();
+        $version = $this-&gt;get_version();
+
+        echo "The date is: $date\n";
+        echo "The PHP version is: $version\n";
+    }
+}
+
+$sys = new SysInfo();
+$sys-&gt;getInfo();
+#$sys-&gt;get_date();
+
+?&gt;
+</pre>
+
+<p>
+In this script, we have a <code>SysInfo</code> class. It outputs some
+system information to the console. We have two private functions and 
+one public. The private methods are here only for internal working of
+the <code>SysInfo</code> class. They are not meant to be called outside the class. 
+</p>
+
+<pre class="explanation">$sys = new SysInfo();
+$sys-&gt;getInfo();
+#$sys-&gt;get_date();
+</pre>
+
+<p>
+We create an instance of the <code>SysInfo</code> class and call the publicly 
+available <code>getInfo()</code> method. The <code>getInfo()</code> method uses 
+internally the private methods to do its job. Uncommenting the last code line 
+yields to error.
+</p>
+
+
+<h2>Method overloading</h2>
+
+<p>
+<em>Method overloading</em> allows the creation of several methods with the same name 
+which differ from each other in the type of the input.
+</p>
+
+<p>
+What is method overloading good for? The Qt4 library gives a nice example for 
+the usage. The <code>QPainter</code> class has three methods to draw a rectangle. 
+Their name is <code>drawRect()</code> and their parameters differ. One takes a 
+reference to a floating point rectangle object, another takes a reference to an 
+integer rectangle object and the last one takes four parameters, x, y, width, height.
+If the C++ language, which is the language in which Qt is developed, didn't have method 
+overloading, the creators of the library would have to name the methods like 
+<code>drawRectRectF()</code>, <code>drawRectRect()</code>, <code>drawRectXYWH()</code>.
+The solution with method overloading is more elegant. 
+</p>
+
+<div class="codehead">overloading1.php</div>
+<pre class="code">&lt;?php
+
+class Sum {
+
+    public function getSum() {
+        return 0;
+    }
+
+    public function getSum($x) {
+        return $x;
+    }
+
+    public function getSum($x, $y) {
+        return $x + $y;
+    }
+}
+
+$s = new Sum();
+echo $s-&gt;getSum() . "\n" ;
+echo $s-&gt;getSum(5) . "\n" ;
+echo $s-&gt;getSum(3, 4) . "\n" ;
+
+?&gt;
+</pre>
+
+<p>
+This is a method overloading, we know from languages like C#, Java or C++. 
+But this does not work in PHP. Running this example, we get the 
+following error: 'Fatal error: Cannot redeclare Sum::getSum()'.
+PHP functions can take arbitrary number of variables by default. 
+</p>
+
+<p>
+To simulate method overloading in PHP, we use the <code>func_get_args()</code> function. 
+</p>
+
+<div class="codehead">overloading2.php</div>
+<pre class="code">&lt;?php
+
+class Sum {
+
+    public function getSum() {
+    
+        $args = func_get_args();
+
+        if (empty($args)) return 0;
+
+        foreach ($args as $arg) {
+            $sum += $arg;
+        }
+
+        return $sum;
+    }
+}
+
+$s = new Sum();
+echo $s-&gt;getSum() . "\n" ;
+echo $s-&gt;getSum(5) . "\n" ;
+echo $s-&gt;getSum(3, 4) . "\n" ;
+echo $s-&gt;getSum(3, 4, 7) . "\n" ;
+
+?&gt;
+</pre>
+
+<p>
+This time, the script will run. 
+</p>
+
+<pre class="explanation">$args = func_get_args();
+</pre>
+
+<p>
+The <code>func_get_args()</code> function returns an array 
+comprising a function's argument list. 
+</p>
+
+<pre class="explanation">foreach ($args as $arg) {
+    $sum += $arg;
+}
+</pre>
+
+<p>
+We go throught all members of the array, and calculate the sum.
+</p>
+
+<pre class="explanation">echo $s-&gt;getSum() . "\n" ;
+echo $s-&gt;getSum(5) . "\n" ;
+echo $s-&gt;getSum(3, 4) . "\n" ;
+echo $s-&gt;getSum(3, 4, 7) . "\n" ;
+</pre>
+
+<p>
+We call the same method name with different number of 
+inputs. 
+</p>
+
+<pre>$ php overloading2.php 
+0
+5
+7
+14
+</pre>
+
+<p>
+This is the output of the <code>overloading2.php</code> script.
+</p>
+
+
+
+<h2>The constructor</h2>
+
+<p>
+A constructor is a special kind of a method. It is automatically called 
+when the object is created. The purpose of the constructor is to initiate 
+the state of the object. The name of the constructor in PHP is <code>__construct()</code>
+(with two underscores). 
+</p>
+
+<div class="codehead">constructor.php</div>
+<pre class="code">&lt;?php
+
+class Song {
+
+    function __construct() {
+        echo "Song object is created \n";
+    }
+}
+
+$song = new Song();
+
+?&gt;
+</pre>
+
+<p>
+We have a <code>Song</code> class. This class has a constructor that 
+prints message to the console. 
+</p>
+
+<pre class="explanation">$song = new Song();
+</pre>
+
+<p>
+This is the time, when the object is created and the constructor is called.
+We get a message in the console. 
+</p>
+
+<pre>$ php constructor.php 
+Song object is created 
+</pre>
+
+<p>
+This is the output of the script. 
+</p>
+
+<p>
+Constructors often take arguments. 
+</p>
+
+<div class="codehead">constructor2.php</div>
+<pre class="code">&lt;?php
+
+class Song {
+
+    function __construct($song) {
+        echo "Song $song is created \n";
+    }
+}
+
+$song = new Song("Bad romance");
+
+?&gt;
+</pre>
+
+<p>
+We modify the previous example a bit. We pass a value to the constructor. 
+</p>
+
+<pre class="explanation">function __construct($song) {
+    echo "Song $song is created \n";
+}
+</pre>
+
+<p>
+The passed argument is stored in the local <code>$song</code> variable. 
+</p>
+
+<pre>$ php constructor2.php 
+Song Bad romance is created 
+</pre>
+
+<p>
+Now we have a message with a song title printed to the console. 
+</p>
+
+<p>
+In the next example, we initiate data members of the class.
+Initiation of variables is a typical job for constructors. 
+</p>
+
+<div class="codehead">friend.php</div>
+<pre class="code">&lt;?php
+
+class Friend {
+
+    private $born;
+    private $name;
+
+    function __construct($name, $born) {
+        $this-&gt;name = $name;
+        $this-&gt;born = $born;
+    }
+
+    function getInfo() {
+        echo "My friend $this-&gt;name was born in $this-&gt;born\n";
+    }
+}
+
+$friend = new Friend("Monika", 1990);
+$friend-&gt;getInfo();
+
+?&gt;
+</pre>
+
+<p>
+We have a <code>Friend</code> class with data members and methods. 
+</p>
+
+<pre class="explanation">private $born;
+private $name;
+</pre>
+
+<p>
+We have two variables in the class definition. The <code>private</code> keyword is
+an access modifier. It is a form of encapsulation. The <code>private</code> keyword
+is the most restrictive modifier. It allows only the object in question to access the variable. 
+No descendants, no other objects. More about this topic later. 
+</p>
+
+<pre class="explanation">function __construct($name, $born) {
+    $this-&gt;name = $name;
+    $this-&gt;born = $born;
+}
+</pre>
+
+<p>
+In the constructor, we initiate the two data members. The <code>$this</code> variable
+is a handler used to reference the object variables. 
+</p>
+
+<pre class="explanation">$friend = new Friend("Monika", 1990);
+$friend-&gt;getInfo();
+</pre>
+
+<p>
+We create a Friend object with two arguments. Then we call the <code>getInfo()</code> method
+of the object. To call object methods, we use the <code>-&gt;</code> operator. 
+</p>
+
+<pre>$ php friend.php 
+My friend Monika was born in 1990
+</pre>
+
+
+<h2>Class constants</h2>
+
+<p>
+PHP enables to create class constants. These constants do not belong to a 
+concrete object. They belong to the class. By convention, constants are 
+written in uppercase letters. 
+</p>
+
+<div class="codehead">constants.php</div>
+<pre class="code">&lt;?php
+
+class Math {
+
+    const PI = 3.14159265359;
+
+    public function getPI() {
+        echo self::PI;
+    }
+}
+
+$math = new Math();
+
+echo Math::PI, "\n";
+echo $math-&gt;getPI(), "\n";
+
+?&gt;
+</pre>
+
+<p>
+We have a Math class with a PI constant. 
+</p>
+
+<pre class="explanation">const PI = 3.14159265359;
+</pre>
+
+<p>
+The <code>const</code> keyword is used to define a constant.
+</p>
+
+<pre class="explanation">public function getPI() {
+    echo self::PI;
+}
+</pre>
+
+<p>
+Class constants are accessed from within methods using the <code>self</code> keyword followed
+by two colons. 
+</p>
+
+<pre class="explanation">echo Math::PI, "\n";
+echo $math-&gt;getPI(), "\n";
+</pre>
+
+<p>
+We print the <code>PI</code> constant to the console. In the first case, we get 
+the constant value by referring to the class name, followed by two colons and 
+a constant name. Note that no object was needed to get the class constant. 
+In the second case, we use the object method. 
+</p>
+
+
+<h2>The instanceof keyword</h2>
+
+<p>
+The <code>instanceof</code> keyword is used to determine whether a
+PHP variable is an instantiated object of a certain class.
+</p>
+
+<div class="codehead">instanceof.php</div>
+<pre class="code">&lt;?php
+
+class Cat {}
+class Dog {}
+class Bird {}
+
+$objects = [ new Cat(), new Dog(), new Cat(), new Bird(), new Bird(), 
+             new Dog(), new Dog(), new Cat(), new Bird() ];
+
+shuffle($objects);
+
+foreach ($objects as $object) {
+
+    if ($object instanceof Cat) {
+        echo "It is a Cat\n";
+    } elseif ($object instanceof Dog) {
+        echo "It is a Dog\n";
+    } else if ($object instanceof Bird) {
+        echo "It is a Bird\n";
+    }
+}
+
+?&gt;
+</pre>
+
+<p>
+In the above script, we have three classes: <code>Cat</code>, 
+<code>Dog</code>, and <code>Bird</code>. 
+We traverse the array and print the class for each array value.
+</p>
+
+<pre class="explanation">$objects = [ new Cat(), new Dog(), new Cat(), new Bird(), new Bird(), 
+             new Dog(), new Dog(), new Cat(), new Bird() ];
+</pre>
+
+<p>
+We create an array of these objects. 
+</p>
+
+<pre class="explanation">shuffle($objects);
+</pre>
+
+<p>
+We shuffle the array. At this point, we don't know the class types
+for the values of the array.
+</p>
+
+<pre class="explanation">if ($object instanceof Cat) {
+    echo "It is a Cat\n";
+}
+</pre>
+
+<p>
+Here we use the <code>instanceof</code> keyword to find out the
+type of the class. 
+</p>
+
+<pre>$ php instanceof.php 
+It is a Bird
+It is a Cat
+It is a Cat
+It is a Dog
+It is a Dog
+It is a Cat
+It is a Dog
+It is a Bird
+It is a Bird
+</pre>
+
+<p>
+We might get this output. 
+</p>
+
+
+<h2>The __toString() method</h2>
+
+<p>
+When we use the <code>print</code> or the <code>echo</code> keyword
+with the object instance, the <code>__toString()</code> special method is called.
+We will demonstrate this in the following example. 
+</p>
+
+<div class="codehead">tostring.php</div>
+<pre class="code">&lt;?php
+
+class Cat {
+
+    public $name;
+    public $age;
+
+    function __construct($name, $age) {
+        $this-&gt;age = $age;
+        $this-&gt;name = $name;
+    }
+
+    function __toString() {
+        return "Cat: $this-&gt;name, Age: $this-&gt;age \n";
+    }
+}
+
+$missy = new Cat("Missy", 6);
+$lucky = new Cat("Lucky", 4);
+
+print $missy;
+echo $lucky;
+
+?&gt;
+</pre>
+
+<p>
+We have a Cat class with a <code>__toString()</code> special method
+defined. 
+</p>
+
+<pre class="explanation">function __toString() {
+    return "Cat: $this-&gt;name, Age: $this-&gt;age \n";
+}
+</pre>
+
+<p>
+The method prints the basic info about the object. 
+</p>
+
+<pre class="explanation">$missy = new Cat("Missy", 6);
+$lucky = new Cat("Lucky", 4);
+</pre>
+
+<p>
+We create two objects of the Cat class. 
+</p>
+
+<pre class="explanation">print $missy;
+echo $lucky;
+</pre>
+
+<p>
+And we use the <code>print</code> or the <code>echo</code> keywords
+on them. 
+</p>
+
+<pre>$ php tostring.php 
+Cat: Missy, Age: 6 
+Cat: Lucky, Age: 4 
+</pre>
+
+<p>
+This is what we get when we run the script. 
+</p>
+
+
+<h2>Inheritance</h2>
+
+<p>
+The inheritance is a way to form new classes using classes that have already 
+been defined. The newly formed classes are called <em>derived</em> classes, 
+the classes that we derive from are called <em>base</em> classes. Important 
+benefits of inheritance are code reuse and reduction 
+of complexity of a program. The derived classes (descendants) override or extend the 
+functionality of base classes (ancestors). 
+</p>
+
+<div class="codehead">derived.php</div>
+<pre class="code">&lt;?php
+
+class Base {
+    function __construct() {
+       echo "Construction of Base class \n";
+    }
+}
+
+class Derived extends Base {
+    function __construct() {
+        parent::__construct();
+        echo "Construction of Derived class \n";
+    }
+}
+
+$obj1 = new Base();
+$obj2 = new Derived(); 
+
+?&gt;
+</pre>
+
+<p>
+In this PHP script, we have two classes: a <code>Base</code> class 
+and a <code>Derived</code> class. The <code>Derived</code> class inherits from 
+the <code>Base</code> class. 
+</p>
+
+<pre class="explanation">class Derived extends Base {
+</pre>
+
+<p> 
+In PHP, we use the <code>extends</code> keyword to create  
+inheritance relations.
+</p>
+
+<pre class="explanation">function __construct() {
+    parent::__construct();
+    echo "Construction of Derived class \n";
+}
+</pre>
+
+<p>
+In the constructor of the Derived class, we call the parent constructor. 
+We use the <code>parent</code> keyword, followed by two colons
+and the <code>__construct()</code> method. The constructors of the parent
+classes must be called explicitly. 
+</p>
+
+<pre class="explanation">$obj1 = new Base();
+$obj2 = new Derived(); 
+</pre>
+
+<p>
+We instantiate both the <code>Base</code> and the <code>Derived</code> classes.
+</p>
+
+<pre>$ php derived.php 
+Construction of Base class 
+Construction of Base class 
+Construction of Derived class 
+</pre>
+
+<p>
+This is the output of the PHP script. 
+</p>
+
+<p>
+A more complex example follows. 
+</p>
+
+<div class="codehead">inheritance.php</div>
+<pre class="code">&lt;?php
+
+abstract class Being { 
+
+    protected $isAlive = true;
+   
+    public function isAlive() {
+    
+        if ($this-&gt;isAlive) {
+            echo "Being is alive\n";
+        } else {
+            echo "Being is not alive\n";
+        }
+    }
+
+    public function kill() {
+    
+        $this-&gt;isAlive = false;
+    }
+}
+
+abstract class Animal extends Being {
+
+    protected $age;
+
+    public function __construct($age) {
+        $this-&gt;age = $age;
+    }
+
+    protected function setAge($age) {
+        $this-&gt;age = $age;
+    }
+
+    public function getAge() {
+        return $this-&gt;age;
+    }
+}
+
+class Cat extends Animal {
+
+    private $name;
+
+    public function __construct($name, $age) {
+        $this-&gt;name = $name;
+        parent::__construct($age);
+    }
+
+    public function getName() {
+    
+        return $this-&gt;name;
+    }
+}
+
+$cat = new Cat("Cici", 4);
+$cat-&gt;isAlive();
+echo $cat-&gt;getName() . " is " .  $cat-&gt;getAge() . " years old\n";
+$cat-&gt;kill();
+$cat-&gt;isAlive();
+
+?&gt;
+</pre>
+
+<p>
+We have used several new concepts here. In the code example, we have three classes: 
+<code>Being</code>, <code>Animal</code>, and <code>Cat</code>. The <code>Animal</code> 
+class inherits from the <code>Being</code> class. The <code>Cat</code> class inherits
+from the <code>Animal</code> class. Classes inherit methods and data members that 
+are not declared as private.
+</p>
+
+<pre class="explanation">abstract class Being {
+</pre>
+
+<p>
+The <code>Being</code> class is declared to be <code>abstract</code>.
+The <code>abstract</code> keyword prohibits instantiation of classes.
+It does not make much sense to create an instance of the class <code>Being</code>. 
+</p>
+
+<pre class="explanation">protected $isAlive = true;
+</pre>
+
+<p>
+The <code>$isAlive</code> data member is declared to be <code>protected</code>.
+Such members can be accessed only by the classes that define them and by 
+their descendants.
+</p>
+
+<pre class="explanation">abstract class Animal extends Being {
+</pre>
+
+<p>
+The <code>Animal</code> class is also declared to be abstract. It inherits from class 
+<code>Being</code>. For this, we use the <code>extends</code> keyword. The <code>Animal</code> 
+is a descendant. It inherits methods and variables of the base <code>Being</code> class.
+</p>
+
+<pre class="explanation">class Cat extends Animal {
+</pre>
+
+<p>
+The <code>Cat</code> class inherits from the <code>Animal</code> class. It inherits 
+from the <code>Animal</code> class and indirectly from the <code>Being</code> class 
+too. It is not declared abstract, which means that we can instantiate it. 
+</p>
+
+<pre class="explanation">parent::__construct($age);
+</pre>
+
+<p>
+In the constructor of the <code>Cat</code> class, we call the parent constructor
+using the <code>parent</code> keyword, followed by two colons
+and the <code>__construct()</code> method. The constructors of the parent
+classes must be called explicitly. 
+</p>
+
+<pre class="explanation">$cat = new Cat("Cici", 4);
+$cat-&gt;isAlive();
+echo $cat-&gt;getName() . " is " .  $cat-&gt;getAge() . " years old\n";
+$cat-&gt;kill();
+$cat-&gt;isAlive();
+</pre>
+
+<p>
+We create a new Cat: Cici, 4 years old. Then we call functions on the cici object. 
+Note the usage of methods that were not created in the <code>Cat</code> class, but 
+rather inherited from the parent classes. 
+</p>
+
+<pre>$ php inheritance.php 
+Being is alive
+Cici is 4 years old
+Being is not alive
+</pre>
+
+<p>
+Output of the script. 
+</p>
+
+
+<h2>Abstract classes and methods</h2>
+
+<p>
+PHP 5 introduced abstract classes and methods. Abstract classes cannot be 
+instantiated. If a class contains at least one abstract method, it must be 
+declared abstract too. Abstract methods cannot be implemented,
+they merely declare the methods' signatures. When we inherit from an 
+abstract class, all abstract methods must be implemented by the derived class. 
+Furthermore, these methods must be declared with the same
+or with a less restricted visibility. 
+</p>
+
+<p>
+Unlike <em>interfaces</em>, abstract classes may have methods with full 
+implementation and may also have defined member fields. So abstract classes 
+may provide a partial implementation. Programmers often put some common 
+functionality into abstract classes. And these abstract classes are later 
+subclassed to provide more specific implementation. For example, the Qt 
+graphics library has a <code>QAbstractButton</code>, which is the abstract 
+base class of button widgets, providing functionality common to buttons. 
+Buttons <code>Q3Button</code>, <code>QCheckBox</code>, <code>QPushButton</code>, 
+<code>QRadioButton</code>, and <code>QToolButton</code> inherit 
+from this base abstract class. 
+</p>
+
+<p>
+Formally put, abstract classes are used to enforce a protocol. A protocol is a 
+set of operations which all implementing objects must support. 
+</p>
+
+<div class="codehead">abstract.php</div>
+<pre class="code">&lt;?php
+
+abstract class Drawing {
+
+    protected $x = 0;
+    protected $y = 0;
+
+    public abstract function area();
+
+    public function getCoordinates() {
+    
+        echo "\$x is $this-&gt;x\n";
+        echo "\$y is $this-&gt;y\n";
+    }
+}
+
+class Circle extends Drawing {
+   
+    private $radius;
+
+    public function __construct($x, $y, $r) {
+    
+        $this-&gt;radius = $r;
+        $this-&gt;x = $x;
+        $this-&gt;y = $y;
+    }
+
+    public function area() {
+    
+        return $this-&gt;radius * $this-&gt;radius * pi();
+    }
+
+   public function __toString() {
+   
+       return "Circle, at x: $this-&gt;x, y: $this-&gt;y, radius: $this-&gt;radius";
+   }
+
+}
+
+$o = new Circle(12, 45, 22);
+echo "$o \n";
+echo "Area of the circle: " . $o-&gt;area() . "\n";
+echo $o-&gt;getCoordinates();
+
+?&gt;
+</pre>
+
+<p>
+In our PHP script, we have an abstract base <code>Drawing</code> class. 
+The class defines two member fields, defines one method and declares one method. One of the methods
+is abstract, the other one is fully implemented. The <code>Drawing</code> class
+is abstract because we cannot draw it. We can draw a circle, a dot, or a square. 
+The <code>Drawing</code> class has some common functionality to the objects that we can draw. 
+</p>
+
+<pre class="explanation">class Circle extends Drawing {
+</pre>
+
+<p>
+A <code>Circle</code> is a subclass of the <code>Drawing</code> class. It must 
+implement the abstract area method. 
+</p>
+
+<pre>$ php abstract.php 
+Circle, at x: 12, y: 45, radius: 22 
+Area of the circle: 1520.53084434
+$x is 12
+$y is 45
+</pre>
+
+<p>
+Output of the script. 
+</p>
+
+
+<h2>Interfaces</h2>
+
+<p>
+A remote control is an interface between the viewer and the TV. It is an interface to 
+this electronic device. Diplomatic protocol guides all activities in the diplomatic 
+field. Rules of the road are rules that motorists, cyclists, and pedestrians must follow. 
+Interfaces in programming are analoguos to the previous examples. 
+</p>
+
+<p>
+Interfaces are:
+</p>
+
+<ul>
+<li>APIs</li>
+<li>Contracts</li>
+</ul>
+
+<p>
+Objects interact with the outside world with the methods they expose. The actual 
+implementation is not important to the programmer, or it also might be secret. A 
+company might sell a library and it does not want to disclose the actual implementation. 
+A programmer might call a <code>maximize()</code> method on a window of a GUI toolkit, 
+but knows nothing about how this method is implemented. From this point of view, 
+interfaces are methods through which objects interact with the outside world, without 
+exposing too much about their inner workings.
+</p>
+
+<p>
+From the second point of view, interfaces are contracts. If agreed upon, they must 
+be followed. They are used to design an architecture of an application, and they help 
+organize the code.  
+</p>
+
+<p>
+Interfaces are fully abstract types. They are declared using the <code>interface</code> keyword. 
+Interfaces can only have method signatures and constants. All method signatures declared in an 
+interface must be public. They cannot have fully implemented methods, nor 
+member fields. A PHP class may implement any number of interfaces. An interface can also extend
+any number of interfaces. A class that implements an interface must implement all method signatures of
+an interface.  
+</p>
+
+<p>
+Interfaces are used to simulate <em>multiple inheritance</em>. A PHP class can extend only one class. 
+A PHP class can implement multiple interfaces. Multiple inheritance using the interfaces is not 
+about inheriting methods and variables. It is about inheriting ideas or contracts, which are described
+by the interfaces. 
+</p>
+
+<p>
+There is one important distinction between interfaces and abstract classes. Abstract classes 
+provide partial implementation for classes that are related in the inheritance hierarchy. 
+Interfaces on the other hand can be implemented by classes that are not related to each other. 
+For example, we have two buttons: a classic button and a round button. Both inherit from an 
+abstract button class that provides some common functionality to all buttons. Implementing 
+classes are related, since all are buttons. Another example might have classes 
+<code>Database</code> and <code>SignIn</code>. They are not related to each other. We
+can apply an <code>ILoggable</code> interface that would force them to create a method to do 
+logging. 
+</p>
+
+<div class="codehead">simpleinterface.php</div>
+<pre class="code">&lt;?php
+
+interface IInfo {
+
+    public function do_inform();
+}
+
+class Some implements IInfo {
+
+    public function do_inform() {
+        echo "This is a Some class\n";
+    }
+}
+
+$sm = new Some();
+$sm-&gt;do_inform();
+
+?&gt;
+</pre>
+
+<p>
+This is a simple PHP script demonstrating an interface.
+</p>
+
+<pre class="explanation">interface IInfo {
+
+    public function do_inform();
+}
+</pre>
+
+<p>
+This is an interface <code>IInfo</code>. It has the <code>do_inform()</code>
+method signature.
+</p>
+
+<pre class="explanation">class Some implements IInfo {
+</pre>
+
+<p>
+We use the <code>implements</code> to implement from an
+interface. 
+</p>
+
+<pre class="explanation">public function do_inform() {
+    echo "This is a Some class\n";
+}
+</pre>
+
+<p>
+The class provides an implementation for the <code>do_inform()</code> method. 
+</p>
+
+<p>
+The next example shows how a class can implement multiple interfaces.
+</p>
+
+<div class="codehead">interface.php</div>
+<pre class="code">&lt;?php
+
+interface Device {
+
+    public function switch_on();
+    public function switch_off();
+}
+
+interface Volume {
+
+    public function volume_up();
+    public function volume_down();
+}
+
+interface Pluggable {
+
+    public function plug_in();
+    public function plug_off();
+}
+
+class CellPhone implements Device, Volume, Pluggable {
+
+    public function switch_on() { echo "Switching on\n"; }
+    public function switch_off() { echo "Switching off\n"; }
+
+    public function volume_up() { echo "Volume up\n"; }
+    public function volume_down() { echo "Volume down\n"; }
+
+    public function plug_in() { echo "Plugging in\n"; }
+    public function plug_off() { echo "Plugging off\n"; }
+}
+
+$o = new CellPhone();
+$o-&gt;switch_on();
+$o-&gt;volume_up();
+$o-&gt;plug_in();
+
+?&gt;
+</pre>
+
+<p>
+We have a <em>CellPhone</em> class that inherits from three interfaces. 
+</p>
+
+<pre class="explanation">class CellPhone implements Device, Volume, Pluggable {
+</pre>
+
+<p>
+The class implements all three interfaces, which are divided by a comma.
+The <code>CellPhone</code> class must implement all method signatures from all 
+three interfaces. 
+</p>
+
+<pre>$ php interface.php 
+Switching on
+Volume up
+Plugging in
+</pre>
+
+<p>
+Running the PHP script. 
+</p>
+
+<p>
+The next example shows how interfaces can extend from multiple other
+interfaces. 
+</p>
+
+<div class="codehead">extendinginterfaces.php</div>
+<pre class="code">&lt;?php
+
+interface IInfo {
+
+    public function do_inform();
+}
+
+interface IVersion {
+
+    public function get_version();
+}
+
+interface ILog extends IInfo, IVersion {
+
+    public function do_log();
+}
+
+
+class DBConnect implements ILog {
+
+    public function do_inform() {
+    
+        echo "This is a DBConnect class\n";
+    }
+
+    public function get_version() {
+    
+        echo "Version 1.02\n";
+    }
+
+    public function do_log() {
+    
+        echo "Logging\n";
+    }
+
+    public function connect() {
+    
+        echo "Connecting to the database\n";
+    }
+}
+
+$db = new DBConnect();
+$db-&gt;do_inform();
+$db-&gt;get_version();
+$db-&gt;do_log();
+$db-&gt;connect();
+
+?&gt;
+</pre>
+
+<p>
+In this PHP script, we define three interfaces. 
+Extending interfaces allows us to organize them.
+</p>
+
+<pre class="explanation">interface ILog extends IInfo, IVersion {
+
+    public function do_log();
+}
+</pre>
+
+<p>
+The <em>ILog</em> interface extends other two interfaces.
+</p>
+
+<pre class="explanation">public function do_inform() {
+
+    echo "This is a DBConnect class\n";
+}
+</pre>
+
+<p>
+The <code>DBConnect</code> class implements the <code>do_inform()</code> method. 
+This method was inherited by the <code>ILog</code> interface, which the class implements. 
+</p>
+
+
+<h2>Polymorphism</h2>
+
+<p>
+Polymorphism is the process of using an operator or function in different 
+ways for different data input. In practical terms, polymorphism means that if 
+class B inherits from class A, it doesn’t have to inherit everything about 
+class A; it can do some of the things that class A does differently. 
+</p>
+
+<p>
+In general, polymorphism is the ability to appear in different forms. 
+Technically, it is the ability to redefine methods for derived classes. 
+Polymorphism is concerned with the application of specific implementations
+to an interface or a more generic base class. 
+</p>
+
+<div class="codehead">polymorphism.php</div>
+<pre class="code">&lt;?php
+
+abstract class Shape {
+    
+    private $x = 0;
+    private $y = 0;
+
+    public abstract function area();
+}
+
+class Rectangle extends Shape {
+
+    function __construct($x, $y) {
+        
+        $this-&gt;x = $x;
+        $this-&gt;y = $y;
+    }
+
+    function area() {
+        
+        return $this-&gt;x * $this-&gt;y;
+    }
+}
+
+class Square extends Shape {
+
+    function __construct($x) {
+        
+        $this-&gt;x = $x;
+    }
+
+    function area() {
+        
+        return $this-&gt;x * $this-&gt;x;
+    }
+}
+
+$shapes = [ new Square(5), new Rectangle(12, 4), new Square(8) ];
+
+foreach ($shapes as $shape) {
+    
+    echo $shape-&gt;area() . "\n";
+}
+
+?&gt;
+</pre>
+
+<p>
+In the above PHP script, we have an abstract <code>Shape</code> class. This class 
+morphs into two descendant classes: <code>Rectangle</code> and <code>Square</code>. 
+Both provide their own implementation of the <code>area()</code> method. 
+Polymorphism brings flexibility and scalability to the OOP systems. 
+</p>
+
+<p>
+This was the first part of the description of OOP in PHP.
+</p>
+
+
+<div class="big_hor">
+<script async="" src="./Object-oriented programming in PHP_files/adsbygoogle.js.download"></script>
+<!-- big_horizontal -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9706709751191532" data-ad-slot="2904953388" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./Object-oriented programming in PHP_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<footer>
+
+<nav>
+<a href="http://zetcode.com/">Home</a>
+<a href="http://zetcode.com/lang/php/">Contents</a> 
+<a href="http://zetcode.com/lang/php/oopi/#">Top of Page</a>
+
+<div class="nav_r">
+<a href="http://zetcode.com/lang/php/regex/">Previous</a>
+<a href="http://zetcode.com/lang/php/oopii/">Next</a>
+</div>
+</nav>
+
+<div class="signature">
+<a href="http://zetcode.com/">ZetCode</a> last modified January 21, 2016  <span class="copyright">© 2007 - 2017 Jan Bodnar</span>
+<span>Follow on <a href="https://www.facebook.com/zetcode7/">Facebook</a></span>
+</div>
+
+</footer>
+
+</div> <!-- content -->
+
+</div> <!-- container -->
+
+<!-- Silktide Cookie -->
+<script>
+    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website",
+    "dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-floating"};
+</script>
+
+<script src="./Object-oriented programming in PHP_files/cookieconsent.min.js.download"></script>
+
+
+
+
+</body></html>
